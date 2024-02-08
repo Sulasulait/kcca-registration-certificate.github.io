@@ -1,0 +1,425 @@
+
+.registration-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.registration-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+
+.registration-list .list-item .reference-number-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.registration-list .list-item .customer-name-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+.registration-list .list-item .form-code-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.registration-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.registration-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.registration-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:38%!important;
+}
+.registration-list a.registration-complete-button {
+	background: #000000;
+	color: #fff;
+}
+.registration-list a.registration-print-registration-form-button {
+	background:#37356C;
+	color: #fff;
+}
+.registration-list a.registration-schedule-button  {
+	background: #0081C2;
+	color: #fff;
+}
+.registration-list a.registration-print-certificate-button {
+	background: #FFFF00;
+	color: #000;
+}
+
+.registration-list a.registration-list-additional-branch-button {
+	background: #0077B3;
+	color: #fff;
+}
+.registration-list a.registration-approve-coin-deactivation-button {
+	background: #1F13BA;
+	color: #fff;
+}
+.registration-list a.registration-reject-coin-deactivation-button {
+	background: #000000;
+	color: #fff;
+}
+.registration-list a.registration-approve-coin-reactivation-button {
+	background: #1F13BA;
+	color: #fff;
+}
+.registration-list a.registration-reject-coin-reactivation-button {
+	background: #000000;
+	color: #fff;
+}
+.registration-list a.registration-approve-registration-button {
+	background: #1F13BA;
+	color: #fff;
+}
+.registration-list a.registration-reject-registration-button {
+	background: #000000;
+	color: #fff;
+}
+.registration-list a.registration-approve-amendment-of-registration-button {
+	background: #1F13BA;
+	color: #fff;
+}
+.registration-list a.registration-reject-amendment-of-registration-button {
+	background: #000000;
+	color: #fff;
+}
+.registration-list a.registration-verify-registration-button {
+	background: #00733E;
+	color: #fff;
+}
+.registration-list a.registration-verify-amendment-button {
+	background: #228D00;
+	color: #fff;
+}
+
+.registration-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+   
+#entity-information-block {
+	float: left;
+	display: block;
+}
+   
+#contact-address-block {
+	float: left;
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.registration-ar-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.registration-ar-list .list-item .numbering-col{
+	float:left!important;
+	width:20px!important;
+}
+
+.registration-ar-list .list-item .number-col{
+	float:left!important;
+	width:150px!important;
+}
+
+.registration-ar-list .list-item .description-col{
+	float:left!important;
+	width:150px!important;
+}
+
+
+.registration-ar-list .list-item .location-col{
+	float:left!important;
+	width:180px!important;
+}
+
+
+.registration-ar-list .list-item .stage-col{
+	float:left!important;
+	width:200px!important;
+}
+
+.registration-ar-list .list-item .status-col{
+	float:left!important;
+	width:130px!important;
+}
+
+.coin-application-associate-containers  {
+	border:0px!important;
+	border-collapse: collapse!important;
+	margin:0px!important;
+}
+.coin-application-associate-containers  .groups{
+	float:left!important;
+	height:450px!important;
+	width:170px!important;
+	overflow-y: auto;
+	background: #fff;
+	border-right:1px solid #ccc!important;
+}
+.coin-application-associate-containers  .groups .item{
+	padding:3% 0 3% 0!important;
+}
+.coin-application-associate-containers  .groups .item a{
+	color:#000;
+	width:100%!important;
+	word-spacing: normal;
+}
+.coin-application-associate-containers  .groups .item.active a{
+	color:#e71919;
+}
+
+.coin-application-associate-containers  .groups .item:hover, .coin-application-associate-containers  .groups .item:hover a, .coin-application-associate-containers  .groups .item a:hover{
+	color:#fff;
+	background:#2926C3;
+}
+
+
+
+.coin-application-associate-containers .associates{
+	float:left!important;
+	height:450px!important;
+	width:220px!important;
+	border-right:1px solid #ccc!important;
+	overflow-y: auto;
+	background: #fff;
+}
+.coin-application-associate-containers .associates .item{
+	padding:2%;
+	cursor:pointer;
+	border-bottom: 1px solid #ccc;
+	width:97%;
+}
+.coin-application-associate-containers .associates .item:hover{
+	background: #ccc;
+}
+.coin-application-associate-containers .associates .item a{
+	color:#000;
+}
+.coin-application-associate-containers .associates .item .info .text{
+	padding:7px;
+	width:150px;
+}
+.coin-application-associate-containers .associates .item .info .delete{
+	float:right;
+}
+.coin-application-associate-containers .associates .item.active{
+	background: #d0f2f1;
+}
+
+.coin-application-associate-containers .details{
+	height:450px!important;
+	overflow-y: auto;
+	background: #fff;
+}
+
+.coin-application-associate-containers .details .header{
+	background:#ccc;
+	border-bottom:1px #555555 solid;
+	padding:7px;
+	height:20px;
+}
+.coin-application-associate-containers .details .header .name{
+	font-size: 130%;
+	color:#000;
+	font-weight:bolder;
+}
+.coin-application-associate-containers .details .header a.update{
+	margin: 0 3px;
+	text-align: center;
+	font-size: 100%;
+	cursor:pointer;
+	font-weight:bolder;
+	border:0px;
+	color: #fff!important;
+	padding:6px!important;
+	background: #F67F23!important;
+}
+.coin-application-associate-containers a.add{
+	margin:1%;
+	text-align: center;
+	font-size: 100%;
+	cursor:pointer;
+	font-weight:bolder;
+	border:0px;
+	color: #fff;
+	padding:2%;
+	display:block;
+	background: #A1BE26!important;	
+}
+
+.coin-application-business-branch-containers a.add{
+	margin:1%;
+	text-align: center;
+	font-size: 100%;
+	cursor:pointer;
+	font-weight:bolder;
+	border:0px;
+	color: #fff;
+	padding:2%;
+	display:block;
+	background: #A1BE26!important;	
+}
+
+
+.coin-application-business-branch-containers .business-branches{
+	float:left!important;
+	height:450px!important;
+	width:220px!important;
+	border-right:1px solid #ccc!important;
+	overflow-y: auto;
+	background: #fff;
+}
+.coin-application-business-branch-containers .business-branches .item{
+	padding:2%;
+	cursor:pointer;
+	border-bottom: 1px solid #ccc;
+	width:97%;
+}
+.coin-application-business-branch-containers .business-branches .item:hover{
+	background: #ccc;
+}
+.coin-application-business-branch-containers .business-branches .item a{
+	color:#000;
+}
+.coin-application-business-branch-containers .business-branches .item .info .text{
+	padding:7px;
+	width:150px;
+}
+.coin-application-business-branch-containers .business-branches .item .info .delete{
+	float:right;
+}
+.coin-application-business-branch-containers .business-branches .item.active{
+	background: #d0f2f1;
+}
+
+
+.coin-application-business-branch-containers .details{
+	height:450px!important;
+	overflow-y: auto;
+	background: #fff;
+}
+
+.coin-application-business-branch-containers .details .header{
+	background:#ccc;
+	border-bottom:1px #555555 solid;
+	padding:7px;
+	height:20px;
+}
+
+.coin-application-business-branch-containers .details .group-header{
+	background:#ccc;
+	border-bottom:1px #ccc solid;
+	padding:7px;
+	margin-left:50px;
+	font-weight: bold;
+	font-size: 115%;
+}
+
+
+
+.coin-application-business-branch-containers .details .header .name{
+	font-size: 130%;
+	color:#000;
+	font-weight:bolder;
+}
+.coin-application-business-branch-containers .details .header a.update{
+	margin: 0 7px;
+	text-align: center;
+	font-size: 100%;
+	cursor:pointer;
+	font-weight:bolder;
+	border:0px;
+	color: #fff!important;
+	padding:6px!important;
+	background: #F67F23!important;
+}
+
+.coin-application-business-branch-containers  {
+	border:0px!important;
+	border-collapse: collapse!important;
+	margin:0px!important;
+}
+.coin-application-business-branch-containers  .groups{
+	float:left!important;
+	height:450px!important;
+	width:170px!important;
+	overflow-y: auto;
+	background: #fff;
+	border-right:1px solid #ccc!important;
+}
+.coin-application-business-branch-containers  .groups .item{
+	padding:3% 0 3% 0!important;
+}
+.coin-application-business-branch-containers  .groups .item a{
+	color:#000;
+	width:100%!important;
+	word-spacing: normal;
+}
+.coin-application-business-branch-containers  .groups .item.active a{
+	color:#e71919;
+}
+
+.coin-application-business-branch-containers  .groups .item:hover, .coin-application-business-branch-containers  .groups .item:hover a, .coin-application-associabusiness-branchte-containers  .groups .item a:hover{
+	color:#fff;
+	background:#2926C3;
+}
+
+.confirm-group-item {
+	padding:7px;
+	font-size: 135%;
+	margin-bottom:10px;
+}
+.confirm-group-item .header{
+	padding:5px;
+}
+.confirm-group-item .header .icon{
+	float:left!important;
+	width:30px;
+}
+.confirm-group-item .header .title{
+	float:left!important;
+	font-weight:bolder;
+	color:#002266!important;
+	padding:3px!important;
+	font-size:140%!important;
+}
+.confirm-group-item .more-details{
+	padding-left:40px;
+	color:#002266!important;
+	padding-top:5px!important;
+	border-top:1px dotted #000000!important;
+}
+
+.registration-list a.registration-verify-deactivate-button {
+	background: #FF7373;
+	color: #fff;
+}
+.registration-list .registration-verify-reactivate-coin-button{
+	background: #9B6AD6;
+	color: #fff;
+}

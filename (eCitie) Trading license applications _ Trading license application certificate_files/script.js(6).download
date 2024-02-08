@@ -1,0 +1,30 @@
+/**
+* KPayment Namespace starts here
+**/
+var KPayment = {	
+	// capture on load
+	calculateGroupTotal : function(){
+		// zero amount to pay
+		var amount_to_pay = 0;
+		
+		// scan all payment-data-calc attributes
+		$("[payment-data-calc]").each(function(i, el){
+			
+			if( $(el).is(':checked') ){				
+				// add amount to payment figure
+				amount_to_pay =  parseFloat(amount_to_pay) + parseFloat($('#amount-' + $(el).attr('id')).val());
+			}
+		});
+		
+		// show total to pay
+		$('#payment-registration-total').html(KCommon.formatAsMoney(amount_to_pay));
+	}
+}
+
+$(document).ready(function(){
+	
+	$('*[payment-data-calc]').on("change", function( event ){
+		// run calculations
+		KPayment.calculateGroupTotal();
+	});
+})

@@ -1,0 +1,200 @@
+.vehicles-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.vehicles-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+
+.vehicles-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.vehicles-list .list-item .name-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.vehicles-list .list-item .category-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+
+.vehicles-list .list-item .balance-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.vehicles-list .list-item .customer-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+.vehicles-list .list-item .driver-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+.vehicles-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.vehicles-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:20%!important;
+}
+
+.vehicles-list a.vehicle-submit-objection-button{
+	background: #3A3A3A;
+	color: #fff;
+}
+
+.vehicles-list a.vehicle-print-disk-button{
+	background: #336699;
+	color: #fff;
+}
+
+.vehicles-list a.vehicle-verify-button{
+	background: #EA761F;
+	color: #fff;
+}
+
+.objections-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+
+.objections-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.objections-list .list-item .reference-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+
+.objections-list .list-item .reason-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.objections-list .list-item .vehicle-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.objections-list .list-item .from-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.objections-list .list-item .to-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.objections-list .list-item .proof-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:20%!important;
+}
+.objections-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.objections-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.objections-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+.objections-list a.vehicle-submit-objection-button{
+	background: #3A3A3A;
+	color: #fff;
+}
+
+.objections-list a.vehicle-print-disk-button{
+	background: #336699;
+	color: #fff;
+}
+
+.objections-list a.vehicle-verify-button{
+	background: #EA761F;
+	color: #fff;
+}
+
+
+.vehicle-revenue-sources .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.vehicle-revenue-sources .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+
+.vehicle-revenue-sources .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.vehicle-revenue-sources .list-item .name-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.vehicle-revenue-sources .list-item .code-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.vehicle-revenue-sources .list-item .subscription-charge-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+.vehicle-revenue-sources .list-item .frequency-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+.vehicle-revenue-sources .list-item .advance-payment-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+.vehicle-revenue-sources .list-item .arrears-cot-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.vehicle-revenue-sources .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.vehicle-revenue-sources .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}

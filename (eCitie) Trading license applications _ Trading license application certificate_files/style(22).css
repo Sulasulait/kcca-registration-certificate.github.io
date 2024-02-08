@@ -1,0 +1,134 @@
+.user-link-box{
+	width:95%!important;	
+	padding:2%;
+	background:#FCFCFB;
+	box-shadow: 0px 0px 12px 1px #E1DFD1; 
+	-webkit-box-shadow: #E1DFD1 0px 0px 12px 1px;	
+	-moz-box-shadow: #E1DFD1 0px 0px 12px 1px;
+	margin-bottom:2%;
+	font-size:90%;
+	color:#999999;
+}
+.user-link-box .content{
+	padding:2%;
+	background: #FEF6AB;	
+}
+.user-link-box .content a{
+	color:#187E0F;
+	font-size:70%;
+  display: block;
+  line-height: 120%;
+  padding: 2px;
+	
+}
+.user-link-box .content a img{
+	width:16px!important;
+	float:left!important;
+	vertical-align: top!important;
+	margin: 0px!important;
+	margin-right: 10px!important;
+}
+
+.user-link-box .content .solid-line{
+	border-top:solid #DF8942 1px;
+	padding-top:5%;
+}
+
+
+
+.user-container{
+	width:99%;
+	border:1px solid #CAC6BB;
+	background-color:#fff;
+	color: #888888;
+	margin:0px;	
+	font-size: 10px;
+	display: inline-block;
+	padding: 0px;
+	
+}
+.user-container .main-data .profile-details{
+	float:left!important;
+	padding:2%;
+}
+.user-container .main-data .profile-details .name{
+	font-size:175%;
+	color:#363636;
+	margin-left:15px;
+}
+.user-container small{
+	font-size:9px; font-weight:normal;
+}
+
+
+.user-container .main-actions a,.user-container .main-actions a:active{
+	margin: 0 7px;
+	text-align: center;
+	font-size: 140%;
+	cursor:pointer;
+	font-weight:bolder;
+	border:0px;
+	background: #DF8942;
+	color: #fff!important;
+	padding:10px;
+	float:left!important;
+	height:24px;
+	text-transform:uppercase;
+	box-shadow: #B3B3B3 3px 3px 3px 3px;		
+	-moz-box-shadow: 3px 3px 3px 3px #B3B3B3;
+	-webkit-box-shadow: 3px 3px 3px 3px #B3B3B3;
+}
+.user-container .main-actions a.pwd{
+	background: #DF8942;
+	color: #fff!important;
+}
+.user-container .main-actions a.details{
+	background: #008000;
+	color: #fff!important;
+}
+.user-container .main-actions a:hover{
+	background: #0076CC;
+	color: #fff!important;
+}
+.user-container .main-data .action{
+	padding:10px;
+}
+.user-container .main-data .action a,.user-container .main-data .action a:active{
+	margin: 0 7px;
+	text-align: center;
+	font-size: 100%;
+	cursor:pointer;
+	font-weight:bolder;
+	border:0px;
+	background: #DF8942;
+	color: #fff!important;
+	padding:10px;
+	float:left!important;
+	text-transform:uppercase;
+	box-shadow: #B3B3B3 3px 3px 3px 3px;		
+	-moz-box-shadow: 3px 3px 3px 3px #B3B3B3;
+	-webkit-box-shadow: 3px 3px 3px 3px #B3B3B3;
+}
+.user-container .main-data .action a.update{
+	background: #DF8942;
+	color: #fff!important;
+}
+.user-container .main-data .action a:hover{
+	background: #0076CC;
+	color: #fff!important;
+}
+
+.user-container .tab-data{
+	padding:10px;
+}
+
+.login-brief{
+	font-size:11px;
+	font-family:Helvetica;
+	color: #6c6c6c;
+}
+
+.login-brief-block{
+	margin-bottom: 40px;
+	margin-top: 18px;
+} 

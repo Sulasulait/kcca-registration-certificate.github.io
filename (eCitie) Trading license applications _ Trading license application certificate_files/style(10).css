@@ -1,0 +1,74 @@
+.glossary-link-wrapper{
+	width:203px;
+	background: #9B9A96; 
+	color:#fff;
+	margin-right:2%;
+}
+.glossary-link-wrapper .head{
+	background: #E1DFD2;
+	color:#EE413A;
+	text-align: left;
+	padding:2%;
+	font-size: 100%;
+}
+.glossary-link-wrapper .content .image{
+	background:#9B9A96;
+	float:left;
+	width:53px;
+}
+.glossary-link-wrapper .content .text{
+	background:#676662;
+	float:left;
+	width:142px;
+	min-height:48px;
+	text-align: left;
+	padding:4px;
+	font-size: 80%;
+}
+
+
+.glossary-list .list-item .actions{
+	padding:5px 10px 10px 10px!important;
+}
+
+.glossary-list .list-item .actions a{
+	float:left!important;
+	text-align: center!important;
+	font-size: 100%!important;
+	cursor:pointer!important;	
+	margin-bottom:5px!important;
+	margin-right:15px!important;
+	background: #A1BE26;
+	color: #fff!important;
+}
+.glossary-list .list-item{
+	border-bottom:0.1em dotted #C0C0C0!important;
+	width:100%!important;
+}
+.glossary-list .list-item .numbering{
+	float:left!important;
+	padding:10px 10px 0px 10px!important;
+	width:35px!important;
+	border-right:0em solid #C0C0C0!important;
+}
+.glossary-list .list-item .term{
+	float:left!important;
+	width:100px!important;
+	padding:10px 10px 0px 10px!important;
+	font-size:115%;
+}
+.glossary-list .list-item .description{
+	float:left!important;
+	width:300px!important;
+	padding:10px 10px 0px 10px!important;
+	font-size:115%;
+}
+.glossary-list .list-item .actions{
+	float:left!important;
+	padding:10px 10px 0px 10px!important;
+}
+
+.glossary-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}

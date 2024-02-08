@@ -1,0 +1,155 @@
+
+.glossary-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+
+.glossary-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.glossary-list .list-item .term-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.glossary-list .list-item .description-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:43%!important;
+}
+.glossary-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:30%!important;
+}
+
+.glossary-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+.glossary-list .hotel-name-col
+{
+	float:left!important;
+	padding:0.5%!important;
+	width:17%!important;
+}
+.glossary-list .total-rooms-col
+{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.moveright
+{
+	margin-left: 82% !important;
+	padding:0.7%!important;
+	font-size: 140% !important;
+	text-align: left!important;
+}
+.total-credits-col
+{
+	padding: 50%!important;
+}
+.payment-eod-report-list .list-item .total-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:17%!important;
+}
+.payment-eod-report-list .total-filings-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:17%!important;
+}
+.rightind
+{
+	text-align: right!important;
+}
+.leftind
+{
+	text-align: left!important;
+}
+.payment-eod-report-list .list-item .total-charges-per-day-col
+{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+.verification-header-title
+{
+	font-weight:bolder!important;
+	line-height: 2em;
+	text-transform:uppercase;
+	padding:0 1% 0 0;
+	color:#E53B2D;
+	font:170% "Upstaged Black", Verdana,  Arial,Helvetica,Sans-serif!important;
+	border-bottom:1px solid #ccc;
+	margin: 1% ; 
+}
+.verification-comments-box
+{
+	border:1px solid #E53B2D;
+	margin: 5%; 
+
+}
+.registration-ar-list .list-item {
+    padding: 0.5%;
+    border-bottom: 0.1em #E1DFD1 solid;
+    width: 97.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+.registration-approve-lht-registration-button
+{
+	background: #58e802 none repeat scroll 0 0 !important;
+    color: #fff;
+}
+.registration-verify-lht-registration-button
+{
+	background: #ffa800 none repeat scroll 0 0 !important;
+    color: #fff;
+}
+.registration-view-lht-registration-button
+{
+	background: #9b9a96 none repeat scroll 0 0 !important;
+    color: #fff;
+}
+.vr-titles
+{
+	padding-left: 5%;
+	font-weight:bolder!important;
+	line-height: 2em;
+	border-bottom:1px solid #ccc;
+}
+.no-filing-yet
+{
+	font-weight:bolder!important;
+	padding-bottom: 3%;
+	padding-left: 2%;
+}
+.inspection-comment-col
+{
+	width: 47%;
+}
+.till-sheet-fields-col
+{
+	width: 20%;
+}
+.time-stamp-col
+{
+	width: 15%;
+}
+.inspected-by-col
+{
+	width: 15%;
+}
+.lht_below_10000
+{
+	float: left !important;
+	padding: 0.5% !important;
+	width: 10% !important;
+}

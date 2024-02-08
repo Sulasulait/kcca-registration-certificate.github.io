@@ -1,0 +1,77 @@
+
+.acknowledgement-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.acknowledgement-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:6%!important;
+}
+
+.acknowledgement-list .list-item .reference-number-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.acknowledgement-list .list-item .form-code-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:22%!important;
+}
+
+.acknowledgement-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:22%!important;
+}
+
+.acknowledgement-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.acknowledgement-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:25%!important;
+}
+.acknowledgement-list a.acknowledgement-complete-interview-button {
+	background: #000000;
+	color: #fff;
+}
+.acknowledgement-list a.acknowledgement-print-acknowledgement-button {
+	background:#1F7F3E;
+	color: #fff;
+}
+.acknowledgement-list a.acknowledgement-schedule-interview-button  {
+	background: #0081C2;
+	color: #fff;
+}
+
+.acknowledgement-list a.acknowledgement-schedule-inspection-button  {
+	background: #6A48D7;
+	color: #fff;
+}
+
+.acknowledgement-list a.acknowledgement-print-certificate-button {
+	background: #FFFF00;
+	color: #000;
+}
+
+.acknowledgement-list a.acknowledgement-schedule-button  {
+	background: #0081C2;
+	color: #fff;
+} 
+.acknowledgement-list a.acknowledgement-approve-item-button  {
+	background: #1F13BA;
+	color: #fff;
+}  
+
+
+.acknowledgement-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}

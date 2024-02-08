@@ -1,0 +1,192 @@
+.revenue-information-box{
+	width:95%!important;	
+	padding:2%;
+	background:#FCFCFB;
+	box-shadow: 0px 0px 12px 1px #E1DFD1; 
+	-webkit-box-shadow: #E1DFD1 0px 0px 12px 1px;	
+	-moz-box-shadow: #E1DFD1 0px 0px 12px 1px;
+	margin-bottom:2%;
+	font-size:90%;
+	color:#999999;
+}
+.revenue-information-box .content{
+	padding:2%;
+	background: #FEF6AB;	
+}
+.revenue-information-box .content a{
+	color:#187E0F;
+	font-size:70%;
+}
+.revenue-information-box .content a img{
+	padding-right:3%;
+}
+
+
+.revenue-information-box .content .solid-line{
+	border-top:solid #DF8942 1px;
+	padding-top:5%;
+}
+.revenue-information-box .header{
+	color:#187E0F;
+	font-size:120%;
+}
+
+.revenues-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.revenues-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.revenues-list .list-item .name-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:20%!important;
+}
+
+.revenues-list .list-item .location-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+
+.revenues-list .list-item .subscription-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+
+.revenues-list .list-item .arreas-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+
+
+.revenues-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.revenues-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+.revenue-blocks{
+	border:0px;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: 0px;
+	width:100%;
+}
+.revenue-blocks .checkbox-header{
+	font-size:135%;
+	font-weight: bolder;
+	background:#676662;
+	color:#F0F5FF;
+	padding:14px;
+}
+.revenue-blocks .checkbox-header input{
+	margin-top:3px;
+}
+
+.revenue-blocks .checkbox-rows .scroll-box{
+	padding:15px;
+	height:250px;
+	overflow-y:scroll;
+}
+
+.revenue-blocks .checkbox-rows span{
+	padding-bottom:7px;
+}
+
+.revenue-blocks h1{
+	font-size: 125%!important;
+	font-weight: bolder!important;
+}
+.revenue-blocks .red{
+	color: #D63232!important;
+}
+.revenue-blocks.totals{
+	background: #E53B2D;
+  	color: #fff;
+  	display: inline-block;
+  	font-family: Helvetica, Arial, Verdana, sans-serif;
+  	font-size: 130%;
+ 	line-height: 39px;
+  	padding:0.5%;
+  	width: 99%;
+  	text-decoration: none;
+  	border-right:0.09em #E53B2D solid;
+}
+ul.arrears-breakdown-item li{
+	list-style-type: square!important;
+	margin-left:0.5%!important;
+	list-style-position: inside;
+}
+
+a.arrears-link, a.arrears-link:visited{
+	color:#CC0000!important;
+}
+
+a.arrears-link:hover{
+	color:#008000!important;
+}
+
+.revenue-asessment-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.revenue-asessment-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.revenue-asessment-list .list-item .reference-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.revenue-asessment-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+
+
+.revenue-asessment-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:16%!important;
+}
+
+
+.revenue-asessment-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+
+.revenue-asessment-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.revenue-asessment-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+
+

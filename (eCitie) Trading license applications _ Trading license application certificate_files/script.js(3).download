@@ -1,0 +1,103 @@
+/**
+* KCall Namespace starts here
+* 
+* @author Ketroute Framework
+**/
+var KCall = {	
+	// category magic
+	load_category_magic : function(){
+		
+		// have magic select
+		if( $('select[call-category-dropdown]').length ){
+			// add listener
+			$('select[call-category-dropdown]').live('change', function(event) {			
+				var selected_id = $(this).attr('id');
+				var magic_params = $('select[call-category-dropdown]').attr('call-category-dropdown');
+				
+					magic_params = magic_params.split(',');
+					
+				
+				// remove other child categories
+				if(selected_id == 'category_id'){
+					$('#'+magic_params[1]).html('');
+				}
+				else{
+					var current_found = false
+					$('#'+magic_params[1]+' div').each(function(){  	
+						// we alraedy found current, so delete
+						if(current_found){
+							$(this).remove();
+						}
+						else{
+							// check if the div is current
+							if($(this).attr('id') == 'holder-'+selected_id){
+								current_found = true;
+							}
+						}
+					});
+				}
+					
+				// item selected	
+				if($(this).val() ){
+					
+					
+					// send form request
+					$.ajax({ 
+						type: 	'GET',  
+						url: 	magic_params[0] + 'form/yes/', 
+						cache: 	false,
+						nsync: false,
+						data: 	{parent_id: $(this).val() }, 
+						success: function(response_data) {	
+							
+							
+							// remove other child categories
+							if(selected_id == 'parent_id'){
+								$('#'+magic_params[1]).html('');
+							}
+							
+							// check error
+							if(response_data){
+								$('#'+magic_params[1]).append(response_data);		
+							}	
+							// framework javascriot after ajax call		 
+							global_loader();					 
+						},
+						// show errors and exceptions
+						error: function(xhr, ajaxOptions, thrownError) {
+							// alert error	
+							if(xhr.responseText){					
+								alert('ERROR: '+xhr.responseText);
+							}
+						} 
+					});		
+				}
+			});
+		}		
+	},
+	specific_date_selected : function (element){
+		// option selected
+		var option_selected = $(element).find("option:selected").val();
+		
+		if(option_selected == 'specific-dates'){
+			$('#from-to-dates').show();
+		}
+		else{
+			// clear dates
+			$('#from-to-dates').find('input').val('');
+			
+			// hide specific dates
+			$('#from-to-dates').hide();
+		}
+	},
+	
+}
+// date filter
+$('#frmReportedDate').live('change', function(e) {
+	KCall.specific_date_selected(this);	
+});
+
+// capture on load
+$(document).ready(function(){
+	KCall.load_category_magic();
+});

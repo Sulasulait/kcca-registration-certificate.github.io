@@ -1,0 +1,19 @@
+/* Example Styles for Demo */
+.etabs { margin: 0; padding: 0; }
+.easytab { display: inline-block; zoom:1; *display:inline; background: #eee; border: solid 1px #999; border-bottom: none; }
+.easytab a { font-size: 14px; line-height: 2em; display: block; padding: 0 10px; outline: none; }
+.easytab a:hover { text-decoration: underline; }
+.easytab.active { background: #fff; padding-top: 6px; position: relative; top: 1px; border-color: #666; }
+.easytab a.active { font-weight: bold; }
+.easytab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; }
+.panel-container { margin-bottom: 10px; }
+
+/* Styles for alternate tabActiveClass */
+.easytab.selected-tab { background: #fff; padding-top: 6px; position: relative; top: 1px; border-color: #666; }
+.easytab a.selected-tab { font-weight: bold; }
+
+/* Styles for Previous and Next buttons */
+.prev-tab, .next-tab { display: block; width: 100px; text-align: center; margin-top: 10px; }
+span.prev-tab, span.next-tab { background: #ccc; }
+.prev-tab { float: left; }
+.next-tab { float: right; }

@@ -1,0 +1,140 @@
+
+.arrears-col {
+    float: left!important;
+    padding: 0.5%!important;
+    width: 9%!important;
+}
+
+.arrears-action-col {
+    float: left!important;
+    padding: 0.5%!important;
+    width: 5%!important;
+}
+
+.arr-select {
+    padding: 5px;
+}
+
+.arr-btn {
+    padding: 5px;
+}
+
+.arr-label {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+
+.arr-action {
+    font-size: 16px;
+    width: 100%;
+}
+
+.wid100 {
+    width: 100%;
+    display: block;
+}
+
+.wid40 {
+    width: 40%;
+    float: left;
+    font-weight: 600;
+    display: block;
+}
+
+.wid60 {
+    width: 55%;
+    float: left;
+    display: block;
+}
+
+.arr-text-green {
+    color: green;
+    font-weight: 600;
+}
+
+.arr-text-orange {
+    color: rgb(165, 127, 2);
+    font-weight: 600;
+}
+
+.wid50 {
+    width: 48%;
+    padding: 1%;
+    padding-top: 0;
+    float: left;
+    display: block;
+}
+
+.wid49 {
+    width: 49%;
+    float: left;
+    display: block;
+}
+
+.border-right {
+    border-right: 1px #555 solid;
+}
+
+.arr-finish {
+    background-color: #537E01!important;
+    border: 1px solid #537E01;
+    color: white;
+    border-radius: 5px;
+}
+
+.arr-cancel {
+    background-color: #CE1212!important;
+    border: 1px solid #CE1212;
+    color: white;
+    border-radius: 5px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.bs-bold {
+    font-weight: 600;
+}
+
+.col20 {
+    width: 20%;
+    display: block;
+}
+
+.col15 {
+    width: 15%;
+    display: block;
+}
+
+.col10 {
+    width: 10%;
+    display: block;
+}
+
+.col8 {
+    width: 8%;
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bsd-response {
+    font-weight: bold;
+    background-color: #2B9153;
+    text-transform: uppercase;
+    color: white;
+    padding: 4px;
+    border-radius: 2px;
+    margin-top: 4px;
+    display: block;
+    text-align: center;
+}

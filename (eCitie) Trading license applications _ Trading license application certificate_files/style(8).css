@@ -1,0 +1,21 @@
+.faq-list .list-item{
+	margin-bottom:4px;
+	padding:1.5%;
+	width:98.5%;
+}
+
+.faq-list .list-item .question{
+	color:#187E0F;
+	font-weight:bolder;
+	text-align: left;
+	text-transform:uppercase;
+	padding:0.5% 0 1% 2%;
+	font-size: 12px;
+	border-bottom: 1px solid #CCCCCC;
+}
+.faq-list .list-item .answer{
+	color:#000000;
+	text-align: left;
+	padding:0.5% 0 1% 2%;
+	font-size: 12px;
+}

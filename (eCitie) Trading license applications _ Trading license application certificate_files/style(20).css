@@ -1,0 +1,120 @@
+
+.sms-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+.sms-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.sms-list .list-item .recipient-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+
+.sms-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.sms-list .list-item .message-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:55%!important;
+}
+.sms-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.sms-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+
+.outbound-sms .list-item .actions{
+	padding:5px 10px 10px 10px!important;
+}
+
+.outbound-sms .list-item .actions a{
+	float:left!important;
+	text-align: center!important;
+	font-size: 100%!important;
+	cursor:pointer!important;
+	margin-bottom:5px!important;
+	margin-right:15px!important;
+	background: #A1BE26;
+	color: #fff!important;
+}
+.outbound-sms .list-item{
+	border-bottom:0.1em dotted #C0C0C0!important;
+}
+.outbound-sms .list-item .numbering{
+	float:left!important;
+	padding:10px 10px 0px 10px!important;
+	width:35px!important;
+	border-right:0em solid #C0C0C0!important;
+}
+.outbound-sms .list-item .address{
+	float:left!important;
+	width:100px!important;
+	padding:10px 10px 0px 10px!important;
+	font-size:115%;
+}
+.outbound-sms .list-item .status{
+	float:left!important;
+	width:100px!important;
+	padding:5px!important;
+	text-align: center;
+}
+.outbound-sms .list-item .date{
+	float:left!important;
+	width:180px!important;
+	padding:10px 10px 0px 10px!important;
+}
+.outbound-sms .list-item .message{
+	width:220px!important;
+	float:left!important;
+	padding:10px 10px 0px 10px!important;
+	white-space: pre;
+	white-space: pre-wrap; 
+	word-wrap: break-word;
+}
+.outbound-sms .list-item .actions{
+	float:left!important;
+	padding:10px 10px 0px 10px!important;
+}
+.outbound-sms-contact-blocks{
+	border:0px;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: 0px;
+	width:100%;
+}
+.outbound-sms-contact-blocks .checkbox-header{
+	font-size:135%;
+	font-weight: bolder;
+	background:#676662;
+	color:#F0F5FF;
+	padding:14px;
+}
+.outbound-sms-contact-blocks .checkbox-header input{
+	margin-top:3px;
+}
+
+.outbound-sms-contact-blocks .checkbox-rows{
+	padding:15px;
+	height:150px;
+	overflow-y:scroll;
+}
+
+.outbound-sms-contact-blocks .checkbox-rows span{
+	padding-bottom:7px;
+}

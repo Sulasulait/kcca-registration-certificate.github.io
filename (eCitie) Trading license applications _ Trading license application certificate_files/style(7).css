@@ -1,0 +1,68 @@
+
+.email-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+
+.email-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.email-list .list-item .recipient-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:25%!important;
+}
+
+.email-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.email-list .list-item .subject-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:25%!important;
+}
+
+.email-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+.email-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+.outbound-email-contact-blocks{
+	border:0px;
+	border-collapse: collapse;
+	padding: 0px;
+	margin: 0px;
+	width:100%;
+}
+.outbound-email-contact-blocks .checkbox-header{
+	font-size:135%;
+	font-weight: bolder;
+	background:#676662;
+	color:#F0F5FF;
+	padding:14px;
+}
+.outbound-email-contact-blocks .checkbox-header input{
+	margin-top:3px;
+}
+
+.outbound-email-contact-blocks .checkbox-rows{
+	padding:15px;
+	height:150px;
+	overflow-y:scroll;
+}
+
+.outbound-email-contact-blocks .checkbox-rows span{
+	padding-bottom:7px;
+}

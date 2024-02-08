@@ -1,0 +1,83 @@
+/**
+* KCalendar Namespace starts here
+**/
+var KCalendar = {	
+	
+	// navigate though calendar
+	navigate : function(url, target){		
+		// send form request
+		$.ajax({ 
+			type: 	'POST',  
+			cache: 	false,
+			nsync: false,
+			url: 	url, 
+			success: function(response_data) {	
+				if(response_data.status == 'success'){
+					$('#'+target).html(response_data.content);
+					KCalendar.popup();
+				}
+				else{
+					$.fancybox(response_data,
+						  {
+						  	title: 'Error',
+						  	'autoScale'	: true,
+						  	'width':450,
+						  	'scrolling'	: 'no',
+						  	'padding'		: 20,
+						  	'opacity': false,
+						  	'overlayShow' : false,
+						  	'titleShow': false,
+						  	'showCloseButton': true,
+						  	'autoDimensions':false
+						  	}
+						  );
+				}				
+			},
+			// show errors and exceptions
+			error: function(xhr, ajaxOptions, thrownError) {
+				// show reponse error
+				xhr.responseText ? alert(xhr.responseText) : false;
+			} 
+		});
+	},
+	popup: function (){
+		
+		$('*[calendar-data-pop]').on("click",function( event ){			
+			event.preventDefault(); 			
+			var id_reference = $(this);			
+			$.fancybox($('#'+$(id_reference).attr('calendar-data-pop')).html(),
+						  {
+						  	title: $(id_reference).attr('title'),
+						  	'autoScale'	: true,
+						  	'width':450,
+						  	'scrolling'	: 'no',
+						  	'padding'		: 20,
+						  	'height'        		: 'auto',
+						  	'opacity': false,
+						  	'overlayShow' : false,
+						  	'titleShow': false,
+						  	'showCloseButton': true,
+						  	'autoDimensions':false
+						  	}
+						  );
+			global_loader();			  
+			return false;
+		});
+	}
+}
+
+$(document).ready(function(){
+	
+	$('.cal-navigator').on("click",function( event ){	
+		event.preventDefault();	
+		
+		var url 				= $(this).attr('href');
+		var data_target 		= $(this).attr('data-target');
+		
+		KCalendar.navigate(url,data_target);
+	});
+	
+	KCalendar.popup();
+});
+
+

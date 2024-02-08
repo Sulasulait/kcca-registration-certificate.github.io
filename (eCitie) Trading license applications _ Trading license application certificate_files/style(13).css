@@ -1,0 +1,130 @@
+.lost-and-found-link-wrapper{
+	background: #fff;
+	width:95%!important;
+	margin-bottom:2%;
+	margin-right:1%;
+	padding:2%;
+	box-shadow: 0px 0px 12px 1px #E1DFD1;
+	-webkit-box-shadow: #E1DFD1 0px 0px 12px 1px;	
+	-moz-box-shadow: #E1DFD1 0px 0px 12px 1px;
+}
+
+.lost-and-found-link-wrapper .head{
+	background: #68bf3e;
+	color:#FFFFFF;
+	font-family:Helvetica;
+	text-align: center;
+	padding:1%;
+	font-size: 100%;
+	word-wrap:break-word;
+}
+.lost-and-found-link-wrapper .head .lost-and-found-title{	
+}
+.lost-and-found-link-wrapper .content{
+	margin-top: 2%;
+}
+.lost-and-found-link-wrapper .content .image{
+	float:left;
+	padding:  0% 2% 0% 0%;
+}
+
+.lost-and-found-link-wrapper .content .text{
+	color:#187E0F;
+	font-weight:bold;
+	width:100%;
+	margin:0 auto;
+	font-size: 65%;
+	margin: 0 auto ;
+}
+
+
+
+.lost-and-found-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+
+.lost-and-found-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.lost-and-found-list .list-item .name-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:25%!important;
+}
+
+.lost-and-found-list .list-item .city-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.lost-and-found-list .list-item .division-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.lost-and-found-list .list-item .where-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.lost-and-found-list .list-item .item-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.lost-and-found-list .list-item .desc-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.lost-and-found-list .list-item .logged-details-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.lost-and-found-list .list-item .picked-details-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+.lost-and-found-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.lost-and-found-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.lost-and-found-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+.lost-and-found-list a.park-list-stage-button{
+	background: #EA761F;
+	color: #fff;
+}
+.lost-and-found-list a.park-list-vehicle-button{
+	background: #FFFF00;
+	color: #000;
+}
+
+.lost-and-found-list a.park-list-committee-button{
+	background: #860404;
+	color: #fff;
+}
+

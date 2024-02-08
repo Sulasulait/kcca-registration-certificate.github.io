@@ -1,0 +1,118 @@
+/**
+* KVacancy Namespace starts here
+* 
+* @author Ketroute Framework
+**/
+var KVehicle = {	
+	// category magic
+	reload : function(){
+		
+	},
+	getDocType : function (value,current_target,target){
+		
+					//clear target
+					$("#"+target).html('');
+				
+					// send form request
+					$.ajax({ 
+						type: 	'GET',  
+						url: 	current_target, 
+						cache: 	false,
+						nsync: false,
+						data: 	{option_doc: value}, 
+						success: function(response_data) {
+							$("#"+target).append(response_data);
+							
+							// framework javascriot after ajax call		 
+							global_loader();
+						}
+						
+					});
+	},
+	getRegistrationType : function (value,current_target,target,secondary_target,secondary_target_chlid){
+		
+					//clear target
+					$("#"+target).html('');
+					if (value == 1) {
+						$("#"+secondary_target).hide();
+						$("#"+secondary_target_chlid).hide();
+					}else{
+						$("#"+secondary_target).show();
+						$("#"+secondary_target_chlid).show();
+					}
+					// send form request
+					$.ajax({ 
+						type: 	'GET',  
+						url: 	current_target, 
+						cache: 	false,
+						nsync: false,
+						data: 	{option_reg: value}, 
+						success: function(response_data) {
+							$("#"+target).append(response_data);
+							
+							// framework javascriot after ajax call		 
+							global_loader();
+						}
+						
+					});
+	},
+	getObjectionType : function (value,current_target,target){
+		
+					//clear target
+					$("#"+target).html('');
+				
+					// send form request
+					$.ajax({ 
+						type: 	'GET',  
+						url: 	current_target, 
+						cache: 	false,
+						nsync: false,
+						data: 	{option: value}, 
+						success: function(response_data) {
+							$("#"+target).append(response_data);
+							
+							// framework javascriot after ajax call		 
+							global_loader();
+						}
+						
+					});
+	},
+	getRelationType : function (value,current_target,target){
+		
+					//clear target
+					$("#"+target).html('');
+				
+					// send form request
+					$.ajax({ 
+						type: 	'GET',  
+						url: 	current_target, 
+						cache: 	false,
+						nsync: false,
+						data: 	{relation: value}, 
+						success: function(response_data) {
+							$("#"+target).append(response_data);
+							
+							// framework javascriot after ajax call		 
+							global_loader();
+						}
+						
+					});
+	}
+}
+
+
+$(document).ready(function(){
+
+   $('input[type=checkbox]').live('change', function(event) {
+   	var id = $(this).attr('id');
+   	if ($(this).is(":checked") == true) {
+   		$('#'+id).attr('checked', 'checked');
+   	} else{
+   		$('#'+id).removeAttr('checked');
+   	};
+   		
+		//KOrganogram.automatePositions(this);
+	});
+	$("#vehicle-ownership-doc-type").hide();
+	$("#vehicle-register-doc-type").hide();
+});

@@ -1,0 +1,94 @@
+/**
+* KRegistration Namespace starts here
+**//*
+var KRegistration = {	
+	// capture on load
+	verifyData : function(){
+		event.preventDefault();
+		// notification element
+		var showing_notifications = '#' + $('#uralookup_identifier').val() + '-event-notification';
+		
+		// clear any error or notice
+		$(showing_notifications).html('');
+		$(showing_notifications).removeClass();	
+		$(showing_notifications).addClass('kfw-err-notices busy');
+		$(showing_notifications).html($('#uralookup_busy_message').val());
+		
+		
+		$.getJSON($('#lookup_path').val() + '?vnp=' + $('#ura_number_plate').val(), function(response){
+			// have datta
+			if(response.data){
+				$('#vehicle_ura_id').val(			response.data.id);
+				$('#vehicle_log_book_date').val(	response.data.approval_date);
+				$('#vehicle_number_plate').val(		response.data.registration_number);
+				$('#vehicle_color').val(			response.data.colour);
+				$('#vehicle_vehicle_year').val(		response.data.year_of_manufacture);
+				$('#vehicle_vehicle_make').val(		response.data.make);
+				$('#vehicle_vehicle_model').val(	response.data.body_desc);
+				$('#vehicle_engine_number').val(	response.data.engine);
+				$('#vehicle_chassis_number').val(	response.data.chasis_number);
+				$('#owner_owner_name').val(	response.data.taxpayer_name);
+				$('#owner_owner_tin').val(	response.data.owner_tin);
+				
+				
+				$(showing_notifications).removeClass();	
+			 	$(showing_notifications).html('');
+				$(showing_notifications).remove();
+			}
+			else{
+				$(showing_notifications).removeClass();	
+		 		$(showing_notifications).html(response.error);
+		 		$(showing_notifications).addClass('kfw-err-notices exception ');
+			}
+		})
+		.error(function(xhr, ajaxOptions, thrownError) {
+			$(showing_notifications).removeClass();	
+	 		$(showing_notifications).html(data.error);
+	 		$(showing_notifications).addClass('kfw-err-notices exception ');
+	     });
+	}	
+}
+
+// captuvare on load
+	var marketverifyData = function(){
+				
+		// notification element
+		var showing_notifications = '#' + $('#uralookup_identifier').val() + '-event-notification';
+		
+		// clear any error or notice
+		$(showing_notifications).html('');
+		$(showing_notifications).removeClass();	
+		$(showing_notifications).addClass('kfw-err-notices busy');
+		$(showing_notifications).html($('#uralookup_busy_message').val());		
+		
+		$.getJSON($('#lookup_path').val() + '?vnp=' + $('#ura_number_plate').val(), function(response){
+			
+			if(response.data){				
+				$('#owner_market_id').val(response.data.market_id);
+				$('#owner_facility_id').val(response.data.market_facility_id);
+				$('#owner_market_facility_grade_id').val(response.data.grade_id);				
+				
+				$(showing_notifications).removeClass();	
+			 	$(showing_notifications).html('');
+				$(showing_notifications).remove();
+			}
+			else{
+				$(showing_notifications).removeClass();	
+		 		$(showing_notifications).html(response.error);
+		 		$(showing_notifications).addClass('kfw-err-notices exception ');
+			}
+		})
+		.error(function(xhr, ajaxOptions, thrownError) {
+			$(showing_notifications).removeClass();	
+	 		$(showing_notifications).html(data.error);
+	 		$(showing_notifications).addClass('kfw-err-notices exception ');
+	     });
+	}
+
+$(document).ready(function(){	
+	$('#ura-verify-np').on("click",function( event ){	
+		KRegistration.verifyData();
+	});
+});
+
+*/

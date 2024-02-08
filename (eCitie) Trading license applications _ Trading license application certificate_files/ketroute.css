@@ -1,0 +1,215 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
+		margin:0;padding:0;border:0;font-size:110%;font:inherit;vertical-align:baseline;
+		font:100% "Upstaged Black", Verdana, Arial,Helvetica,Sans-serif;
+}
+h1{
+	font-size: 160%!important;
+}
+h2{
+	font-size: 140%!important;
+}
+h3{
+	font-size: 120%!important;
+}
+h4{
+	font-size: 115%!important;
+}
+h5{
+	font-size: 105%!important;
+}
+h6{
+	font-size: 100%!important;
+}
+strong, .strong{
+	font-weight: bolder!important;
+}
+td, th{vertical-align:top;}
+li{list-style-type: none;}
+label{
+	font-size:100%!important;
+}
+label.error, span.error{color:#AA0000;}
+label.red, span.red, .red{color:#AA0000;}
+label.green, span.green, .green{color:#008000;}
+label.blue, span.blue, .blue{color:#0000CC;}
+small{
+	font-size:90%;
+}
+.red-bg{background-color:#AA0000!important; color:#fff;}
+.green-bg{background-color:#008000!important; color:#fff;}
+.blue-bg{background-color:#0000CC!important; color:#fff;}
+/* Set display: property */
+.di { display: inline; }
+.fl { float: left; }
+.fr { float: right; }
+
+/* Set text align properties */
+.tar { text-align: right; }
+.tal { text-align: left; }
+.tac { text-align: center; }
+.tat { vertical-align:top; }
+.tam { vertical-align:middle; }
+.tab { vertical-align:bottom; }
+.upper{text-transform: uppercase;}
+.tsl { border-top:1px solid #827A69; }
+.bsl { border-bottom:1px solid #827A69; }
+
+/* Set some general usefulls */
+.none { display: none; }
+.mb10 { margin-bottom: 10px; }
+.mr10 { margin-right: 10px; }
+.mt10 { margin-top: 10px; }
+.ml10 { margin-left: 10px; }
+.pb10 { padding-bottom: 10px; }
+.pb5 { padding-bottom: 5px; }
+.pr10 { padding-right: 10px; }
+.pr5 { padding-right: 5px; }
+.pt10 { padding-top: 10px; }
+.pt5 { padding-top: 5px; }
+.pl10 { padding-left: 10px; }
+.pl5 { padding-left: 5px; }
+.mt0 { margin-top: 0 !important; }
+.italic{font-style:italic;}
+.m10 { margin: 10px; }
+.p10 { padding: 10px; }
+.strike{
+	text-decoration:line-through;
+}
+/* Ad
+/* Add this class to any outside container that you want to clear */
+.clear { clear: both; }
+/* now we can clear the div so that it stretches */
+.clear:after{ content: ".";  display: block;  height: 0; clear: both; visibility: hidden;}
+/* Hides from IE-mac \*/
+* html .clear {height: 1%;}
+.clear {display: block;}
+.hand { cursor: pointer; }
+label { cursor: pointer; }
+p{line-height:1.5em;}
+a, a:hover, a:active{
+	text-decoration: none;
+}
+.mceEditorContainer select{
+	float:left!important;
+}
+input[type=file]{
+	border:0px!important;
+}
+
+/* apply a space on all icons thats are part of a anchor */
+a img.icon{
+	margin-top:3px!important;
+}
+
+.placeholder-blur{
+  color:#000;
+  font-style:italic;
+   /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=60);
+
+  /* Netscape */
+  -moz-opacity: 0.6;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.6;
+
+  /* Good browsers */
+  opacity: 0.6;
+}
+.placeholder-focus{
+   color:#000;
+   
+   /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=none)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=none);
+
+  /* Netscape */
+  -moz-opacity: none;
+
+  /* Safari 1.x */
+  -khtml-opacity: none;
+
+  /* Good browsers */
+  opacity: none;
+}
+.break-words{
+	word-wrap: break-word !important; /* Internet Explorer 5.5+ */
+	-ms-word-wrap: break-word !important;
+}
+div[kfwhref]{
+	cursor: pointer;
+}
+
+
+.half-col{
+	width:49.5%;
+}
+.third-col, .three-col{
+	width:28%;
+}
+.four-col{
+	width:24.5%;
+}
+.five-col{
+	width:19.5%;
+}
+
+.half-full-col{
+	width:73.5%;
+}
+.three-quarter-full-col{
+	width:93%;
+}
+.full-col{
+	width:99.5%;
+}
+.ten-col{
+	width:9.5%;
+}
+
+.ten-col img{
+	margin: 1% 18% 0% 16%;
+}
+.ten-full-col{
+	width:90.5%;
+}
+
+.menu-block{
+	padding-left: 140px;
+}
+.org-color-1{
+	color:#E53B2D;
+}
+
+/*Ecitie table*/
+.ecitie-tb {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.ecitie-tb td, .ecitie-tb th {
+	/* border: 1px solid #ddd; */
+	padding: 8px;
+}
+
+.ecitie-tb tr:nth-child(odd){
+	background-color: #f8f8ff;
+}
+
+.ecitie-tb tr:hover {
+	background-color: #ddd;
+}
+
+.ecitie-tb th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #ddd;
+	color:#E53B2D;
+	font-weight:bolder;
+}

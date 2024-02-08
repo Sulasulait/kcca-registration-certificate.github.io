@@ -1,0 +1,703 @@
+
+.payment-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.payment-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.payment-list .list-item .vendor-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-list .list-item .trans-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+
+.payment-list .list-item .prn-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-list .list-item .customer-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.payment-list .list-item .trans-id-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-list .list-item .reg-status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-list .list-item .trans-status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:11%!important;
+}
+
+.payment-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-list .list-item .payment-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.payment-list .list-item .expiry-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:16%!important;
+}
+
+.payment-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-list .list-item .item-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+
+.payment-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+.payment-list a.payment-print-button{
+	background: #EA761F;
+	color: #fff;
+}
+
+.payment-list a.payment-print-receipt-button{
+	background: #EA761F;
+	color: #fff;
+}
+
+.payment-list a.payment-print-paf-button{
+	background: #996699;
+	color: #fff;
+}
+
+
+
+
+.payment-eod-report-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.payment-eod-report-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.payment-eod-report-list .list-item .vendor-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+
+.payment-eod-report-list .list-item .balance-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:16%!important;
+}
+
+
+.payment-eod-report-list .list-item .batch-totals-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+
+.payment-eod-report-list .list-item .issues-found-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.payment-eod-report-list .list-item .total-reconciled-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.payment-eod-report-list .list-item .total-credits-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.payment-eod-report-list .list-item .total-reversals-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:7%!important;
+}
+.payment-eod-report-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:6%!important;
+}
+.payment-eod-report-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.payment-eod-report-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}	
+.payment-eod-report-list a.download-till-sheet-button{
+	background: #1F7F3E;
+	color: #fff;
+}
+.payment-eod-report-list a.download-report-button{
+	background: #BF6230;
+	color: #fff;
+}			
+
+.payments-list .list-item{
+	padding:0.5%;
+	border-bottom:0.1em #E1DFD1 solid;
+	width: 99.5%;
+}
+.payments-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.payments-list .list-item .name-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:20%!important;
+}
+
+.payments-list .list-item .location-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+
+
+.payments-list .list-item .subscription-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:18%!important;
+}
+
+
+.payments-list .list-item .balance-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+
+
+.payments-list .list-item .arrears-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:13%!important;
+}
+
+
+.payments-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payments-list .list-item .amount-col.input{
+	padding:0.1%!important;
+}
+
+.payments-list .list-item .amount-col input{
+	width:70%;
+}
+.payments-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+	padding:0.3%!important;
+}
+
+
+.payment-blocks .checkbox-header{
+	font-size:135%;
+	font-weight: bolder;
+	background:#676662;
+	color:#F0F5FF;
+	padding:0.5%;
+}
+
+.payment-blocks .checkbox-rows .scroll-box{
+	height:250px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+
+.payment-blocks .checkbox-rows span{
+	padding-bottom:1%;
+}
+
+.payment-blocks h1{
+	font-size: 125%!important;
+	font-weight: bolder!important;
+}
+.payment-blocks .red{
+	color: #D63232!important;
+}
+.payment-blocks-totals{
+	background: #E53B2D;
+  	color: #fff;
+  	display: inline-block;
+  	font-family: Helvetica, Arial, Verdana, sans-serif;
+  	font-size: 130%;
+  	width: 100%;
+  	text-decoration: none;
+}	
+.payment-blocks-totals h1{
+	color:#fff;
+}
+
+.payment-statistics{
+	display: block;
+	padding:0 1% 1% 1%;
+}
+
+.payment-statistics .stats-item{
+	float: left;
+	margin:1%;
+	padding:0.1%;
+	width:27%;
+	background: #E1DFD2;
+	border:1px solid #9B9A96; 
+}
+
+
+.payment-statistics .stats-item .stats-label{
+	text-align: center;
+	font-size: 145%;
+	color: #000;
+	padding: 2%;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+.payment-statistics .stats-item .stats-data{
+	display: block;
+}
+.payment-statistics .stats-item .stats-data .counter{
+	text-align: center;
+	font-size: 145%;
+	background: #2B9153;
+	color: #fff;
+	padding: 2%;
+	font-weight: bolder;
+	text-transform: uppercase;
+	width: 25%;
+	float: left;
+	height: 100%;
+}
+.payment-statistics .stats-item .stats-data .data{
+	text-align: center;
+	font-size: 145%;
+	background: #E53B2D;
+	color: #fff;
+	padding: 2%;
+	font-weight: bolder;
+	text-transform: uppercase;
+	width: 67%;
+	float: left;
+}
+
+.payment-bill-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.payment-bill-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.payment-bill-list .list-item .financial-year-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-bill-list .list-item .customer-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-bill-list .list-item .division-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+
+.payment-bill-list .list-item .revenue-type-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-bill-list .list-item .revenue-model-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payment-bill-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payment-bill-list .list-item .due-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payment-bill-list .list-item .created-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payment-bill-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+
+.payment-report-container .item{
+	margin: 1%;
+	text-align: left;
+	font-size: 100%;
+	cursor: pointer;	
+	width: 26%!important;
+	float: left;
+	border: 1px solid #CAC6BB;
+}
+.payment-report-container .item a{
+	text-decoration: none;
+}
+.payment-report-container .item .header{
+	font-size: 120%;
+	color: #2A2A2A;
+	background: url(../../../../images/backgrounds/gray.jpg) 0 0 repeat-x;
+	padding: 2%;
+	font-weight: bolder;
+	border-bottom: 1px solid #CAC6BB;
+}
+.payment-report-container .item .info{
+	color: #2A2A2A;
+	padding:2%!important;
+}
+.payment-report-level1-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.payment-report-level1-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+.payment-report-level1-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.payment-report-level1-list .list-item .revenue-source-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.payment-report-level1-list .list-item .total-number-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:27%!important;
+}
+
+.payment-report-level1-list .list-item .amount2-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-report-level1-list .list-item .amount3-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:14%!important;
+}
+
+
+
+.payment-report-level1-list .list-item .collecting-agent-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+
+
+.payment-report-level1-list .list-item .total-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:40%!important;
+}
+
+.payment-report-level1-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:30%!important;
+}
+.payment-report-level2-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+.payment-report-level2-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+
+.payment-report-level2-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+
+.payment-report-level2-list .list-item .reg-number-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.payment-report-level2-list .list-item .coin-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:11%!important;
+}
+
+.payment-report-level2-list .list-item .customer-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:14%!important;
+}
+
+.payment-report-level2-list .list-item .reg-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+
+.payment-report-level2-list .list-item .collecting-agent-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:12%!important;
+}
+
+.payment-report-level2-list .list-item .amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:15%!important;
+}
+
+.payment-report-level2-list .list-item .amount2-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-report-level2-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+
+
+.payment-refund-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+
+.payment-refund-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+.payment-refund-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:20%!important;
+}
+
+.payment-refund-list .list-item .customer-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-refund-list .list-item .reference-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-refund-list .list-item .payment-reference-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-refund-list .list-item .claim-type-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-refund-list .list-item .claim-amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-refund-list .list-item .claim-reason-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-refund-list .list-item .claim-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-refund-list .list-item .claim-approval-date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-refund-list .list-item .status-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payment-refund-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+.payment-refund-list a.payment-verify-refund-button{
+	background: #00733E;
+	color: #fff;
+}
+
+.payment-refund-list a.payment-approve-refund-button{
+	background: #1F13BA;
+	color: #fff;
+}
+.payment-refund-list a.payment-reject-refund-button{
+	background: #000000;
+	color: #fff;
+}
+.payment-refund-list a.payment-refund-acknowledgement-receipt-button {
+	background:#1F7F3E;
+	color: #fff;
+}
+
+
+.payment-adjustment-list .list-item{
+	padding:5px;
+	border-bottom:0.1em #E1DFD1 solid;
+}
+
+
+.payment-adjustment-list .list-item .numbering-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:2%!important;
+}
+.payment-adjustment-list .list-item .actions-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:20%!important;
+}
+
+.payment-adjustment-list .list-item .from-revenue-source-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+
+.payment-adjustment-list .list-item .reference-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-adjustment-list .list-item .from-revenue-source-item-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-adjustment-list .list-item .to-revenue-source-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-adjustment-list .list-item .to-revenue-source-item-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-adjustment-list .list-item .adjusted-amount-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:8%!important;
+}
+.payment-adjustment-list .list-item .adjustment-reason-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-adjustment-list .list-item .date-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:5%!important;
+}
+.payment-adjustment-list .list-item .adjusted-by-col{
+	float:left!important;
+	padding:0.5%!important;
+	width:10%!important;
+}
+.payment-adjustment-list .list-item.header{
+	color:#E53B2D;
+	font-weight:bolder;
+}
+.payment-adjustment-list a.payment-view-payment-fees-adjustment-button{
+	background: #00733E;
+	color: #fff;
+}

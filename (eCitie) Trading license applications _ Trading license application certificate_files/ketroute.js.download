@@ -1,0 +1,2331 @@
+/**
+* KCommon Namespace starts here
+* 
+* @author Ketroute Framework
+**/
+var KCommon = {	
+	/**
+	* show or hide tiny mce controls
+	*
+	* @param string element_id
+	*
+	* @return void
+	**/
+	toggleEditor : function (element_id, show_editor){		
+		// cointinue if element exist
+		if( $('#'+element_id).length > 0 ){
+			if(show_editor == 1){
+				tinyMCE.execCommand('mceAddControl', true, element_id);
+			}
+			else if(show_editor == 0){
+				//tinyMCE.execCommand('mceFocus', false, element_id);                    
+				tinyMCE.execCommand('mceRemoveControl', true, element_id);
+			}
+		}
+	},
+	/**
+	* save element of an editor
+	*
+	* @return void
+	**/
+	saveEditor : function (){		
+		// check if tinyMCE exists
+		if(tinyMCE !== undefined){	
+			tinyMCE.triggerSave(false,false);
+		}
+	},
+	
+	/**
+	* insert content bin  the cursor position of the editor
+	*
+	* @param string element_id
+	* @param string content
+	*
+	* @return void
+	**/
+	insertContentInEditor : function(element_id, content){
+		// check if tinyMCE exists
+		if(tinyMCE !== undefined){	
+			tinyMCE.execInstanceCommand(element_id,'mceInsertContent',false,content);
+		}
+	},
+	
+	/**
+	* charater counter
+	- to be used bu onkeyUp
+	*
+	* @param string source_id
+	* @param string display_id
+	* @param int maxlimit
+	* @param boolean hide_max - optonal default true
+	*
+	* @return void
+	**/
+	charCounter : function(source_id, display_id, maxlimit, hide_max){
+		// BLOCK THE EXCEEDING OF LIMIT
+		if($('#'+source_id).length > 0 && $('#'+display_id).length > 0){
+			var text_data = $('#'+source_id).val();
+			
+			$('#'+source_id).val(text_data.substring(0, maxlimit) );
+			
+			// update the counter
+			$('#'+display_id).html(hide_max === true ? $('#'+source_id).val().length : $('#'+source_id).val().length + '/' + maxlimit);
+		}				
+	},
+	/**
+	* show the div by its element it
+	*
+	* @param string element
+	*
+	* @return void
+	**/
+	showElements : function (element) {
+		// check if element exists
+		if($('#'+element).length > 0){
+			$('#'+element).css.style({display: 'block'});
+		}
+	},
+
+	/**
+	* hide the div by its element it
+	*
+	* @param string element
+	*
+	* @return void
+	**/
+	hideElements : function (element) {
+		// check if element exists
+		if($('#'+element).length > 0){
+			$('#'+element).css.style({display: 'none'});
+		}
+	},
+	/**
+	* get user uniqui id uuid to use for in no cache machanisim
+	*
+	* @return string
+	**/
+	uuid : function() {
+	    var dateObject = new Date();
+	    var uuid = dateObject.getTime();
+	    return uuid;
+	},	
+	/**
+	 * apply a form security authenticity
+	 * 
+	 * @param string form_element_id
+	 * 
+	 * @return void
+	 */
+	applyFormAuthenticityToken : function ( form_element_id ){
+		
+	},	
+	/**
+	* checkboc control
+	*
+	* @param string check_them
+	* @param string prefix
+	* @param int counter
+	*
+	* @return void
+	**/
+	checkboxControl : function (check_them, prefix,counter){
+		if(counter && counter > 0){
+			for(var rowcount = 1; rowcount <= counter; rowcount++)
+			{
+				var elementname = prefix+''+rowcount;
+				
+				if($('#'+elementname).length > 0){
+					if(check_them){
+						$('#'+elementname).attr('checked', 'checked');
+					}
+					else{
+						$('#'+elementname).removeAttr('checked');
+						
+					}				
+				}
+			}
+		}
+	},	
+	/**
+	* format amount as money
+	*
+	* @param string mnt
+	*
+	* @return string
+	**/
+	formatAsMoney  : function (mnt) {
+	    mnt -= 0;
+	    mnt = (Math.round(mnt*100))/100;
+	    return (mnt == Math.floor(mnt)) ? mnt + '.00' 
+	              : ( (mnt*10 == Math.floor(mnt*10)) ? 
+	                       mnt + '0' : mnt);
+	},
+	
+	/**
+	* move select box item from one to the other
+	*
+	* @param string source
+	* @param string destination
+	* @param string clearall
+	*
+	* @return void
+	**/
+	moveItemsToSelectBox  : function (source, destination, clearall){	    
+	    if($('#'+source).length > 0 && $('#'+destination).length > 0){
+	    	$('#'+source).find('option:selected').clone().appendTo('#'+destination);
+	    	
+	    	if(clearall){	
+	    		$('#'+source).find('option:selected').remove();
+	    	}	
+	    }
+	},
+    
+    /**
+	* select all selecte box options
+	*
+	* @param string select_id
+	*
+	* @return void
+	**/
+ 	selectAllOptions  : function ( select_id ){
+ 		if($('#'+select_id).length > 0){
+			$('#'+select_id).find('option').attr('selected', 'selected');
+			$('#'+select_id).find('option').attr('checked', 'checked');
+		}
+	},
+	
+	/**
+	* clear all item of multiple select box
+	*
+	* @param string select_id
+	*
+	* @return void
+	**/
+	clearAllOptions  : function ( select_id ){
+		if($('#'+select_id).length > 0){
+			$('#'+select_id).find('option').removeAttr('selected');
+			$('#'+select_id).find('option').removeAttr('checked');
+		}
+	},
+	
+	/**
+	* update div content
+	*
+	* @param string div
+	* @param string content
+	*
+	* @return void
+	**/
+	updateElements : function (div, content){
+		// check if div exists
+		if($('#'+div).length > 0){
+			$('#'+div).html(content);
+		}
+	},
+	/**
+	* disable elements
+	
+	* @param string prefix
+	* @param string suffix of all elements separated by comma(,)
+	*
+	* @return void
+	**/
+	disableElements : function (element_prefix, element_suffix_list){	
+		var elements = element_suffix_list.split(',');
+		
+		for(element_count = 0; element_count < elements.length; element_count++){
+			
+			if($('#'+element_prefix+elements[element_count]).length > 0){
+				$('#'+element_prefix+elements[element_count]).attr('disabled','disabled');
+			}
+			
+		}
+	},
+	/**
+	* enable elements
+	
+	* @param string prefix
+	* @param string suffix of all elements separated by comma(,)
+	*
+	* @return void
+	**/
+	enableElements : function (element_prefix, element_suffix_list){
+		
+		var elements = element_suffix_list.split(',');
+		
+		for(element_count = 0; element_count < elements.length; element_count++){
+			
+			if($('#'+element_prefix+elements[element_count]).length > 0){
+				$('#'+element_prefix+elements[element_count]).removeAttr('disabled');
+			}
+		}
+	},	
+	/**
+	* enable buttons
+	*
+	* @param string button_ids
+	*
+	* @return void
+	**/
+	enableButtons : function (button_ids){
+		/**
+		* split the button elemnts by a comma
+		**/
+		var all_elements = button_ids.split(',');
+		
+		/**
+		* loop thought ids and chnage properties of each found element
+		**/
+		for(element_index = 0; element_index < all_elements.length; element_index++){
+			/**
+			* check if element exists
+			**/
+			if( $('#'+all_elements[element_index]).length > 0 ){
+				/**
+				* change the button to be clickable
+				**/
+				$('#'+all_elements[element_index]).addClass('submit');
+				
+				/**
+				* enable the button
+				**/
+				$('#'+all_elements[element_index]).removeAttr('disabled');
+			}
+		}
+	},
+	
+	/**
+	* clear multiple divs at ones
+	*
+	* @param string divs - div ids separated by a comma(,)
+	*
+	* @return void
+	**/
+	clearElements : function (divs){
+		
+		var div_elements = divs.split(',');
+		
+		for(div_count = 0; div_count < div_elements.length; div_count++){
+			
+			if($('#'+div_elements[div_count]).length > 0){
+				$('#'+div_elements[div_count]).html('');
+			}
+		}
+	},
+	
+	/**
+	* submit a form in the background using ajax
+	*
+	* @param string form_element_id
+	* @param string busy_message
+	* 
+	* @return void
+	**/
+	submitForm : function ( form_element_id, busy_message ) {
+		// confirmation box
+		if($("#"+form_element_id).attr('kfwconfirm')){
+			if(!confirm($("#"+form_element_id).attr('kfwconfirm'))){
+				return;
+			}
+		}
+		
+		// notification element
+		var showing_notifications = null;
+		
+		// check for form notification element
+		if($('#' + form_element_id + '-event-notification')){
+			showing_notifications = '#' + form_element_id + '-event-notification';
+			
+			// focus to progress bar
+			$('html, body').animate({scrollTop: ($(showing_notifications).offset().top - 45)},500);
+						
+			// clear any error or notice
+			$(showing_notifications).html('');
+			$(showing_notifications).removeClass();	
+			$(showing_notifications).addClass('kfw-err-notices busy');
+			$(showing_notifications).html(busy_message);
+			
+		}		
+		
+		// check for form security authenticity
+		if($("#"+form_element_id).attr('kfwsecurity') == 'auto'){
+			KCommon.applyFormAuthenticityToken(form_element_id);
+		}
+		
+		// update underlying textarea before submit validation
+		if(tinyMCE !== undefined){   
+			tinyMCE.triggerSave(false, false);
+		}
+		
+		// send form request
+		$.ajax({ 
+			type: 	$("#"+form_element_id).attr('method'),  
+			url: 	$("#"+form_element_id).attr('action'), 
+			cache: 	false,
+			data: 	$("#"+form_element_id).serialize(), 
+			success: function(response_data) {	
+				
+				// status not defined
+				if(response_data.status == undefined){
+					// we have the notification idetifier
+					if(showing_notifications){
+						$(showing_notifications).html('');
+						$(showing_notifications).removeClass();	
+						$(showing_notifications).addClass('kfw-err-notices exception');
+						$(showing_notifications).html(busy_message);
+						$(showing_notifications).html(response_data)
+					}
+					else{
+						// show a alert box
+						alert(response_data);
+					}					
+				}
+						
+				// update response status
+				if(showing_notifications && response_data.content_errors){
+			 		$(showing_notifications).removeClass();	
+			 		//$(showing_notifications).addClass('kfw-err-notices '+response_data.status);
+			 		$(showing_notifications).addClass('kfw-err-notices ');
+					$(showing_notifications).html(response_data.content_errors);
+				}
+				
+				// clear errors 
+				$('#'+form_element_id+ ' label').attr('title', '');
+				$('#'+form_element_id+ ' label').removeClass('error');
+				
+				// check for errors
+				if(response_data.errors){
+					// add error class to the label
+					for (key in response_data.errors) {
+						if(response_data.errors[key]){
+							$('#'+form_element_id+ ' label[for="'+key+'"]').attr('title', $(response_data.errors[key]).text());
+							$('#'+form_element_id+ ' label[for="'+key+'"]').addClass('error');
+						}
+					}
+				}
+				// no list of erros
+				else{
+					// check error status
+					if(response_data.status == 'error' ){
+						// update response status
+						if(showing_notifications){
+					 		$(showing_notifications).removeClass();	
+					 		$(showing_notifications).html('');
+					 		$(showing_notifications).addClass('kfw-err-notices');
+					 		
+					 		// shoe error
+							$(showing_notifications).html( (response_data.content_errors) ? response_data.content_errors : response_data.content );
+						}
+						else{
+							// alert box
+							$(showing_notifications).html( (response_data.content_errors) ? response_data.content_errors : response_data.content );
+						}
+					}
+				}
+				
+				// check if we need to remove the form
+				if(response_data.remove_element){
+					$(showing_notifications).removeClass();	
+				 	$(showing_notifications).html('');
+					$(showing_notifications).remove();
+				}
+				
+				// option to reload popup
+				if(response_data.reload_popup){					
+					reload_popup(response_data.reload_popup);
+				}
+				
+				// load url on targeted element
+				if(response_data.load_url){
+					
+					// check if target or container has been set	
+					if(response_data.load_target || $("#"+form_element_id+'-container').length){
+						// send request
+						$.get(response_data.load_url, function(loaded_data) {
+							
+							// target
+							if(response_data.load_target){
+								// overwrite target
+								$("#"+response_data.load_target).html(loaded_data.content ? loaded_data.content : loaded_data);
+							}
+							else{
+								// overwrite container
+								$("#"+form_element_id+'-container').html(loaded_data.content ? loaded_data.content : loaded_data);
+							}
+							global_loader();
+						})
+						// request error
+						.error(function(xhr, ajaxOptions, thrownError) {
+							// target
+							xhr.responseText ? alert(xhr.responseText) : alert(thrownError);
+						});
+					}
+					else{
+						// redirect to the url
+						if(response_data.load_timeout){
+							setTimeout(function(){location.href = response_data.load_url;}, response_data.load_timeout);
+						}
+						else{
+							location.href = response_data.load_url;
+						}
+					}	
+					//@dont remove notice -> $(showing_notifications).removeClass();	$(showing_notifications).html('');
+				}	
+				
+				// load content on targeted element
+				if(response_data.load_content){
+					$(showing_notifications).removeClass();	
+					$(showing_notifications).html('');
+					
+					// check if target or container has been set	
+					if(response_data.load_target || $("#"+form_element_id+'-container').length){
+						// target
+						if(response_data.load_target){
+							// overwrite target
+							$("#"+response_data.load_target).html(response_data.load_content);
+						}
+						else{
+							// overwrite container
+							$("#"+form_element_id+'-container').html(response_data.load_content);
+						}
+						global_loader();
+					}
+				}
+				
+				// callback function has been specified
+				if(response_data.callback){setTimeout(function(){eval(response_data.callback);},response_data.callback_timeout ? response_data.callback_timeout : 400);}
+				
+				
+				// close_dialog
+				if(response_data.close_dialog){
+					setTimeout(function(){close_dialog();},response_data.callback_timeout ? response_data.callback_timeout : 3000);
+				}	
+					 
+			},
+			// show errors and exceptions
+			error: function(xhr, ajaxOptions, thrownError) {
+				// show reponse error
+				if(showing_notifications && response_data.content){
+					$(showing_notifications).removeClass();	
+					$(showing_notifications).addClass('kfw-err-notices warning');
+					$(showing_notifications).html(xhr.responseText);
+				}
+				else{
+					// alert box
+					xhr.responseText ? alert(xhr.responseText) : alert(thrownError);
+				}
+			} 
+		});
+	},
+	/**
+	 * fire an alert message
+	 * - this method help in controlling alert mesage which are used for debugging
+	 *
+	 * @param string msg
+	 */
+	alert: function ( msg ){
+		if($('base').attr('debug-mode') == 'on'){
+			alert(msg)
+		}
+	} 
+}
+/**
+* KValidator Namespace starts here
+**/
+var KValidator = {
+	/**
+	* check if an element is not empty
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isEmpty: function ( element ) {
+		var re = /^\s*$/;
+		return re.test( $("#"+element).val() );
+	},
+	/**
+	* check if an element has a valid numeric value
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isNumeric: function ( element ) {
+		var re = /^[0-9]+$/
+		return re.test( $("#"+element).val() );
+	},
+	/**
+	* check if an element has a valid email address
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isEmail: function ( element ) {
+		var re = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
+		return re.test( $("#"+element).val() );
+	},
+	/**
+	* check if a checkbox option is checked
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isChecked: function ( element ) {
+		return ( element.checked ) ? false : true;
+	},
+	/**
+	* check if a select box option is selected
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isSelected: function ( element ) {
+		return (element.selectedIndex == 0) ? true : false;
+	},
+	/**
+	* check if a input box is monetary value
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isMoney: function ( element ){
+		
+		var rands_only = /^[0-9]{1,12}$/
+		var rands_and_cents = /^(\d{1,12})\.(\d{2,2})$/
+		
+		return ( rands_only.test($("#"+element).val()) || rands_and_cents.test($("#"+element).val()) );
+	},
+	/**
+	* check if a input box is a valid date  of format: YYYY-MM-DD
+	*
+	* @param string element
+	* @param boolean check_time
+	*
+	* @return boolean
+	**/
+	isValidDateHyphen: function ( element, check_time ){
+		// do we need to check for time as well
+		if(check_time){
+			var format_no_seconds = /^(\d{4,4})\-(\d{2,2})\-(\d{2,2}) (\d{2,2}):(\d{2,2})$/
+			var format_with_seconds = /^(\d{4,4})\-(\d{2,2})\-(\d{2,2}) (\d{2,2}):(\d{2,2}):(\d{2,2})$/
+			return ( format_no_seconds.test( $("#"+element).val() ) || format_with_seconds.test( $("#"+element).val() ) );
+		}
+		else{
+			// check for date only
+			var format = /^(\d{4,4})\-(\d{2,2})\-(\d{2,2})$/
+			return format.test( $("#"+element).val() );
+		}
+	},
+	/**
+	* check if a input box is a valid date  of format: YYYY/MM/DD
+	*
+	* @param string element
+	* @param boolean check_time
+	*
+	* @return boolean
+	**/
+	isValidDateSlash: function ( element, check_time ){
+		// do we need to check for time as well
+		if(check_time){
+			var format_no_seconds = /^(\d{4,4})\/(\d{2,2})\/(\d{2,2}) (\d{2,2}):(\d{2,2})$/
+			var format_with_seconds = /^(\d{4,4})\/(\d{2,2})\/(\d{2,2}) (\d{2,2}):(\d{2,2}):(\d{2,2})$/
+			return ( format_no_seconds.test( $("#"+element).val() ) || format_with_seconds.test( $("#"+element).val() ) );
+		}
+		else{
+			// check for date only
+			var format = /^(\d{4,4})\/(\d{2,2})\/(\d{2,2})$/
+			return format.test( $("#"+element).val() );
+		}
+	},
+	/**
+	* check if a input box is a valid time 10:30 or 10:30:00
+	*
+	* @param string element
+	*
+	* @return boolean
+	**/
+	isValidTime: function ( element ){
+		var format_no_seconds = /^(\d{2,2}):(\d{2,2})$/
+		var format_with_seconds = /^(\d{2,2}):(\d{2,2}):(\d{2,2})$/
+		return (format_no_seconds.test( $("#"+element).val() ) || format_with_seconds.test( $("#"+element).val() ));
+	}
+}
+
+// hide empty containers 
+var hide_all_empty_containers = function ( ){
+	/* hide all framework empty divs*/
+	$("[id^=kfw-]").each(function(i, el){
+		
+		if($(el).html() == ''){
+			$(this).css('display','none');
+ 		}
+	});
+	
+}
+
+// activate tip boxs
+var activate_tool_tips = function ( ){
+	// tip box trigger
+	
+	 $('*[kfwtip]').poshytip({
+		className: 'tip-twitter',
+		showTimeout: 1,
+		alignTo: 'target',
+		alignX: 'center',
+		offsetY: 5,
+		allowTipHover: true,
+		followCursor:true,
+		fade: true,
+		slide: true,
+		content: $(this).attr('kfwtip')
+	});
+	
+	// apply poshytip to all targeted-tipbox
+	$("*[kfw-targeted-tipbox]").each(function(){  
+		var poshytip_target_id  = $(this).attr('kfw-targeted-tipbox');
+		var poshytip_id  		= $(this);  
+		
+		$(poshytip_id).poshytip({
+			className: 'tip-twitter',
+			showTimeout: 1,
+			alignTo: 'target',
+			alignX: 'bottom',
+			offsetY: 5,
+			offsetX: -116.5,
+			allowTipHover: true,
+			followCursor:true,
+			fade: true,
+			slide: true,
+			content: function(){return $('#'+poshytip_target_id).html()}
+		});
+	});
+	
+	// click span for information box 
+	$("*[kfw-alert-tipbox]").on('click', function(event){
+		event.preventDefault();
+		alert($('#'+$(this).attr('kfw-targeted-tipbox')).text());
+	});
+}
+
+// anchors with kfwajax must open in a dialog if value is yes (a kfwajax="yes"), otherwise open in a element id matching (a kfwajax="elname") else continue normal
+var activate_dialogs = function ( ){
+	
+	$("*[kfwajax]").not("form").on('click', function(event){
+		event.preventDefault();
+		// if confirmation is required, ples ask
+		if(!$(this).attr('confirm') || ($(this).attr('confirm') && confirm($(this).attr('confirm'))) ){
+			// activity image
+			$.fancybox.showActivity();
+			$.getJSON($(this).attr('href'), function(data){
+				// show error
+				$.fancybox(data.content,
+						  {
+						  	title: data.page_title,
+						  	'autoScale'		: false,
+						  	'scrolling'		: 'no',
+						  	'padding'		: 20,
+						  	'width'        	: 680,
+						  	'height'        : 'auto',
+						  	'hideOnOverlayClick' : false,
+						  	'enableEscapeButton' : false,
+						  	'onComplete'	: function() {global_loader();}
+						  	}
+						  );
+				$.fancybox. resize();
+			})
+			.error(function(xhr, ajaxOptions, thrownError) {
+				$.fancybox(xhr.responseText.content ? xhr.responseText.content : xhr.responseText).close();
+	         });
+	         return false;
+		}
+	});	
+	
+	$('*[kfw-popdata]').on("click",function( event ){			
+			event.preventDefault(); 			
+			var id_reference = $(this);			
+			$.fancybox($('#'+$(id_reference).attr('kfw-popdata')).html(),
+						  {
+						  	title: $(id_reference).attr('title'),
+						  	'autoScale'	: true,
+						  	'width':420,
+						  	'scrolling'	: 'no',
+						  	'padding'		: 20,
+						  	'height'        		: 'auto',
+						  	'opacity': false,
+						  	'overlayShow' : false,
+						  	'titleShow': false,
+						  	'showCloseButton': true,
+						  	'autoDimensions':false
+						  	}
+						  );
+			$.fancybox. resize();
+			global_loader();			  
+			return false;
+		});
+}
+
+var reload_popup = function ( url ){
+	
+	// activity image
+	$.fancybox.showActivity();
+	$.getJSON(url, function(data){
+		// show error
+		$.fancybox(data.content,
+				  {
+				  	title: data.page_title,
+				  	'autoScale'		: false,
+				  	'scrolling'		: 'no',
+				  	'padding'		: 20,
+				  	'width'        	: 420,
+				  	'height'        : 'auto',
+				  	'onComplete'	:	function() {global_loader();}
+				  	}
+				  );
+		$.fancybox. resize();
+	})
+	.error(function(xhr, ajaxOptions, thrownError) {
+		$.fancybox(xhr.responseText.content ? xhr.responseText.content : xhr.responseText).close();
+     });
+     return false;
+}
+
+var close_dialog = function ( ){
+	// check if fancy box is registered
+	$.fancybox.close();
+}
+
+// set classes for rows of the table list
+var table_formating_helper = function ( ){	
+	$("#kfw-table tbody tr:odd").addClass('odd');
+    $("#kfw-table tbody tr:even").addClass('even');
+}
+
+// all href with kfw-href must open in a target div
+var all_divs_clickable = function ( ){	
+	// div is a link
+	$( "div[kfwhref]").on("click",function( event ){
+		event.preventDefault(); 
+		
+		// confirmation box
+		if($(this).attr('kfwconfirm')){
+			if(!confirm($(this).attr('kfwconfirm'))){
+				return;
+			}
+		}
+		// heref url value
+		var url = $(this).attr('kfwhref');
+		
+		// div has a container
+		if(target_container = $(this).attr('data-target')){
+			$('#'+target_container).removeClass('content-loader-busy');	
+			$('#'+target_container).addClass('content-loader-busy');
+			$('#'+target_container).html('&nbsp;');
+					
+			// send form request
+			$.ajax({ 
+				type: 	'GET',  
+				cache: 	false,
+				nsync: false,
+				url: url,
+				success: function(response_data) {	
+					$('#'+target_container).html(response_data.content);	
+                   	global_loader();
+                   	// remove loading class
+					$('#'+target_container).removeClass('content-loader-busy');	
+				},
+				// show errors and exceptions
+				error: function(xhr, ajaxOptions, thrownError) {
+					// show reponse error
+					xhr.responseText ? alert(xhr.responseText) : false;
+                   	// remove loading class
+					$('#'+target_container).removeClass('content-loader-busy');	
+				} 
+			});
+		}
+		else{
+			// url redirect
+			location.href = url;
+		}		
+		
+	});
+	
+    // tab opener
+   $( "a[kfwtab]" ).on("click",function( event ){
+   		event.preventDefault();
+   		
+   		$(this).parents('table:first').find('.tabs').find('a[class~=on]').addClass('off');
+   		$(this).parents('table:first').find('.tabs').find('a').removeClass('on')
+   		$(this).addClass('on');
+   		
+   		var target_container = $(this).attr('kfwtab');
+   		
+   		// send form request
+		$.ajax({ 
+			type: 	'GET',  
+			cache: 	false,
+			nsync: false,
+			url: $(this).attr('href'),
+			success: function(response_data) {	
+				$('#'+target_container).html(response_data.content);
+                                global_loader();
+			},
+			// show errors and exceptions
+			error: function(xhr, ajaxOptions, thrownError) {
+				// show reponse error
+				xhr.responseText ? alert(xhr.responseText) : false;
+			} 
+		});
+    });
+    
+    $('*[kfw-zoom]').on("click",function( event ){
+    	var url = $(this).attr('kfw-zoom');
+    	$.getJSON(url, function(data){
+			// show error
+			$.fancybox(data,{title: $(this).attr('title')});
+			$.fancybox. resize();
+		})
+		.error(function(xhr, ajaxOptions, thrownError) {
+			$.fancybox(xhr.responseText.content ? xhr.responseText.content : xhr.responseText).close();
+	     });
+    	 return false;
+    });
+}
+
+var apply_required_if_flag = function (element){
+	// get properties of the element replication process
+	var required_if_prop 	= $(element).attr('kfw-apply-rf-flag');
+	var required_if_value 	= $(element).val();
+	
+	// check for properties
+	if(required_if_prop){
+		required_if_prop = required_if_prop.split(':');
+		
+		// require indexes suplied
+		if(required_if_prop.length >= 2 ){
+			var field_type 				= required_if_prop[0];		
+			var field_prefix 			= required_if_prop[1];		
+			var field_targets 			= required_if_prop[2];			
+				field_targets 			= field_targets.split(',');
+				
+			var total_fields = field_targets.length;
+			
+			// on field at a time
+			for(var rf_count = 0; rf_count < total_fields; rf_count++){
+				// add or remove star (*)
+				$('label[for^=' + field_prefix + field_targets[rf_count] + '] span[kfw-required-flag]').html(required_if_value == 1 ? '*' : '');				
+			}
+		}
+	}
+}
+
+var replication_field_data = function (element){
+	// get properties of the element replication process
+	var replication_prop 		= $(element).attr('kfw-replicate');
+	var replication_on_value 	= $(element).val();
+	
+	// check for properties
+	if(replication_prop){
+		replication_prop = replication_prop.split(',');
+		
+		// require indexes suplied
+		if(replication_prop.length >= 5 && replication_on_value == replication_prop[4]){
+			var source_form_prefix 			= replication_prop[0];			
+			var source_form_fields 			= replication_prop[2];
+				source_form_fields			= source_form_fields.split(':');
+				
+			var destination_form_prefix 	= replication_prop[1];			
+			var destination_form_fields 	= replication_prop[3];
+				destination_form_fields		= destination_form_fields.split(':');
+				
+			var total_fields = source_form_fields.length;
+			
+			// on field at a time
+			for(var rf_count = 0; rf_count < total_fields; rf_count++){
+				var source_field_target_parts = source_form_fields[rf_count];
+					source_field_target_parts = source_field_target_parts.split('/');
+					
+				var destination_field_target_parts = destination_form_fields[rf_count];
+				
+				switch(source_field_target_parts[1]){
+					// text field to textfield manipulation
+					case 'text':
+						$('#' + destination_form_prefix + '' + destination_field_target_parts).val($('#' + source_form_prefix + '' + source_field_target_parts[0]).val());
+					break;
+					
+					// cloning: select box to another select box 
+					case 'select-one':
+						var $options = $('#' + source_form_prefix + '' + source_field_target_parts[0] +" > option").clone();
+					    $('#' + destination_form_prefix + '' + destination_field_target_parts).empty();
+					    $('#' + destination_form_prefix + '' + destination_field_target_parts).append($options);
+					    $('#' + destination_form_prefix + '' + destination_field_target_parts).val($('#' + source_form_prefix + '' + source_field_target_parts[0]).val());
+					break;
+				}
+			}			
+		}
+	}
+} 
+
+// remove the skype plugin markup
+var remove_skype_markup = function ( ){
+   window.setTimeout(function() {
+		$('.skype_pnh_container').html('');
+		$('.skype_pnh_print_container').removeClass('skype_pnh_print_container');
+	}, 800);
+}
+
+var drilldown_data = function (url, close_dialog, dd_feeder_frm_prefix, loader_identifier){
+	
+	$.ajax({ 
+		type: 	'GET',  
+		url: 	url + '?&frm-prefix='+dd_feeder_frm_prefix, 
+		cache: 	false,
+		nsync: false,
+		success: function(response_data) {
+			
+			// error or status undefined
+			if(response_data.status == undefined || response_data.status == 'error'){
+				alert(response_data.content)
+			}
+			else{
+				switch(response_data.items.type){
+					// clear all but one where applicable
+					case 'select-one':				
+						// remove all options but not the first one if is a label
+						$('#'+response_data.items.id).children(':not(:first-child)').remove();
+						
+						// overrite the container data
+						$('#'+response_data.items.id).append(response_data.content)
+					break;
+					
+					// clear all
+					case 'select-multiple':                                            
+						// remove all options
+                        $('#'+response_data.items.id).children().remove();
+                                                
+						// overrite the container data
+						$('#'+response_data.items.id).append(response_data.content)
+					break;
+					
+					// clear all
+					case 'text':
+						$('#'+response_data.items.id).val(response_data.content)
+					break;
+					
+					// clear all
+					case 'textarea':
+						$('#'+response_data.items.id).val(response_data.content)
+					break;
+					
+					// clear all
+					case 'checkbox':
+						$('#'+response_data.items.id).closest('div.data').html(response_data.content);
+					break;
+					
+					// clear all
+					case 'radio':
+						$('#'+response_data.items.id).closest('div.data').html(response_data.content);
+					break;
+				} 
+			}
+		},
+		// show errors and exceptions
+		error: function(xhr, ajaxOptions, thrownError) {
+			// alert box
+			xhr.responseText ? alert(xhr.responseText) : false;
+		},
+		
+		complete : function(){
+			// close loading message
+			(!loader_identifier) ? false : $('#'+loader_identifier).remove();
+		} 
+	});
+}
+
+// make sure all form eements show as active when focused
+var form_elements_activity = function ( ){
+		
+	// format the form elements on focus
+	$( "input,textarea,select" ).on("focus",function( event ){
+		//$(this).addClass('focus');
+		
+		// current input value
+		var value = $(this).val();
+		
+		// check for title attr: this is similar to the html5 placeholder atributes
+		// for backward compatability(IE) this is used...
+		if(default_value = $(this).attr('default-title')){
+			if(value == default_value){
+				// clear box
+				$(this).val('');
+				
+				// remove transparency and italics
+				$(this).removeClass('placeholder-blur');
+				$(this).addClass('placeholder-focus');
+			}
+		}
+	});  
+	
+	// format the form elements on focus
+	$( "input,textarea,select" ).on("blur",function( event ){
+		// current input value
+		var value = $.trim($(this).val());
+		
+		// check for title attr: this is similar to the html5 placeholder atributes
+		// for backward compatability(IE) this is used...
+		if(default_value = $(this).attr('default-title')){
+			if(value == ''){
+				// clear box
+				$(this).val(default_value);
+				
+				// apply transparency and italics
+				$(this).removeClass('placeholder-focus');
+				$(this).addClass('placeholder-blur');
+			}
+		}
+	}); 
+	
+	$('*[kfwdrilldown-p]').on("change", function( event ){
+		
+		var dd_data 				= $(this).attr('kfwdrilldown-p');
+		var dd_data_id 				= $(this).attr('id');
+		var dd_data_value 			= $(this).val();
+		if(!dd_data_value || dd_data_value == null){
+			dd_data_value = '00';
+		}
+		var dd_fields				= dd_data.split(',');
+		var dd_counter				= dd_fields.length;
+		var dd_feeder_url_prefix 	= $(this).attr('feeder-url');
+		var dd_feeder_loading_msg 	= $(this).attr('feeder-loading-msg');
+		var dd_feeder_frm_prefix 	= $(this).attr('feeder-frm-prefix');
+		    dd_feeder_frm_prefix	= dd_feeder_frm_prefix == undefined ? '' : dd_feeder_frm_prefix;
+		    
+		
+		// on field at a time
+		for(var dd_count = 0; dd_count < dd_counter; dd_count++){
+			
+			// check if target exists and clear it
+			if($('[kfwdrilldown-c="'+dd_fields[dd_count]+'"]').length){
+				// set teh child identifier
+				var child_identifier	= ''+dd_feeder_frm_prefix+''+dd_fields[dd_count];
+				
+				// add the loading div to child
+				$('#'+child_identifier+'[kfwdrilldown-c="'+dd_fields[dd_count]+'"]').before('<div id="dd-lo-'+child_identifier+'" class="dd-loading-overlay">'+dd_feeder_loading_msg+'</div>');
+				
+				// send form request
+				drilldown_data(dd_feeder_url_prefix + ',' + dd_fields[dd_count] + '/kdd-data/' + dd_data_value + '/', (dd_feeder_loading_msg && (dd_count+1) >= dd_counter) ? true : false,dd_feeder_frm_prefix, 'dd-lo-'+child_identifier);
+			}
+		}
+		
+	});
+	
+	$('*[kfwchecker]').on("click", function( event ){
+		
+		var data_items 		= $(this).attr('kfwchecker');
+		var data_items		= data_items.split(',');
+		
+		// checkboxes/radio inside a wrapper and thier id starts with
+		if(data_items.length >= 2){
+			$('#'+data_items[0]).find('input').removeAttr('checked');
+			$('#'+data_items[0]).find('input').removeAttr('selected');
+			$('#'+data_items[0]).find('input[id$="'+data_items[1]+'"]').attr('checked', 'checked');
+			$('#'+data_items[0]).find('input[id$="'+data_items[1]+'"]').attr('selected', 'selected');
+		}
+		// turn things on/off
+		else if(data_items.length == 1){			
+			// check if this was checked
+			if( $(this).is(':checked') ){
+				// check all
+				$('#'+data_items[0]).find('input[type="radio"]').attr('checked', 'checked').attr('selected', 'selected');
+				$('#'+data_items[0]).find('input[type="checkbox"]').attr('checked', 'checked').attr('selected', 'selected');
+			}
+			else{
+				// uncheck all
+				$('#'+data_items[0]).find('input[type="radio"]').removeAttr('checked').removeAttr('selected');
+				$('#'+data_items[0]).find('input[type="checkbox"]').removeAttr('checked').removeAttr('selected');
+			}
+		}
+		
+		// check for kfw-triggeer-after option
+		if(method_after = $(this).attr('kfw-trigger-after')){
+			eval(method_after);
+		}
+	});
+	
+	// load a simple tinymce editor inside a jquery window
+	tinymce.init({ selector: 'textarea[kfweditor="html-small"]' }); 	
+	
+	// a fix for srcdoc for browsers that does not support it srcdoc attributes on iframes.
+	$("iframe[srcdoc]").each(function(){
+		// read more about srcdoc on: http://www.w3schools.com/tags/att_iframe_srcdoc.asp
+		//$(this).contents().find('body').html($(this).attr('srcdoc'));
+		// at the moment this is supported on Chrome and Safari 6 (HTML5)
+	});
+	
+	
+}
+
+// activate all pickers: date, datetime, time, color
+var activate_pickers = function ( ){
+	// scan each input   	
+	$("input[kfwpicker-d],input[kfwpicker-t],input[kfwpicker-dt],input[kfwpicker-c]").each(function(){  
+		// date: format yy-mm-dd
+		if( date_format = $(this).attr("kfwpicker-d")){ 	
+			// check for date format yy-mm-dd,range i.e. -10:+5		
+			var date_data= date_format.split(',');
+			
+			// year range found
+			var date_format = date_data[0];
+			var year_range  = (date_data.length >= 2) ? date_data[1] : false;
+			
+			$(this).datepicker({
+				        buttonImage: $('base').attr('href')+"images/objects/calendar.png",
+				        buttonImageOnly: true,
+				        changeMonth: true,
+				        changeYear: true,
+				        showOn: "both",
+						dateFormat: date_format,
+						yearRange: year_range
+				     });
+		}
+		
+		// time: format yy-mm-dd
+		else if( data_format = $(this).attr("kfwpicker-t")){  
+			$(this).timepicker({
+						buttonImage: $('base').attr('href')+"images/objects/clock.png",
+				        buttonImageOnly: true,
+				        changeMonth: true,
+				        changeYear: true,
+				        showOn: "both",
+						hourGrid: 4,
+						minuteGrid: 10,
+						showMillisec: false,
+						timeFormat: 'hh:mm'
+					}
+	         	);
+		}
+		
+		// datetime: format yy-mm-dd
+		else if( data_format = $(this).attr("kfwpicker-dt")){  
+			$(this).datetimepicker({
+				stepMinute: 5,
+				showMillisec: false,
+				dateFormat: 'yy-mm-dd',
+				timeFormat: 'hh:mm',
+				showSecond: false,
+				showMillisec: false,
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				numberOfMonths: 2,
+				showButtonPanel: true,
+				minDate: 0,
+				separator: ' @ '
+			});
+		}
+		
+		// color picker: hex / rgb
+		else if( data_format = $(this).attr("kfwpicker-c")){  
+			// chedck for valid format
+			switch(data_format){
+				// HEX format
+				case 'hex':
+					
+				break;
+				
+				// RGB format
+				case 'rgb':
+					
+				break;
+			}			
+		}
+		
+		// check for title attr: this is similar to the html5 placeholder atributes
+		// for backward compatability(IE) this is used...
+		if( default_title = $(this).attr("default-title")){
+			// current input value
+			var value = $(this).val();		
+			
+			// empty or same text as examle 
+			if(value == '' || value == default_title){
+				// apply old version placeholder blur stylish
+				$(this).removeClass('placeholder-focus');
+				$(this).addClass('placeholder-blur');
+			}
+			else{
+				// apply old version placeholder focus stylish
+				$(this).removeClass('placeholder-blur');
+				$(this).addClass('placeholder-focus');
+			}
+		}
+	
+	});
+}
+
+// call functins
+var global_loader = function(){	
+	activate_tool_tips();	
+	activate_dialogs();
+	all_divs_clickable();
+	table_formating_helper(); 
+	remove_skype_markup();
+	form_elements_activity();
+	activate_pickers();
+	apply_some_cosmetics();
+	watch_form_submit();
+	$('*[error]').addClass('red');
+	$('#fancybox-content input[type="button"]').not('[search]').attr('onclick', 'close_dialog(); return false;');
+}
+
+var smart_tabs = function (){
+	// easytab-container
+	if($('.easytab-container').length){
+		$('#'+$('.easytab-container').closest('div').attr('id')).easytabs({cache:false, cycle:false, defaultTab: 'li:first-child',transitionIn : 'slideDown',animate:true,animationSpeed: 100,transitionOut:'slideUp' })
+		// panels missing will be found as invalid
+		.bind('easytabs:before', function(e, clicked, panel, settings) {
+			
+			if(clicked){				
+				// panel of id none
+				if(!($(panel).attr('id') == 'none' || $('#'+$(panel).attr('id')).size() == 0)){
+					return true;
+				}
+			}
+		})		
+		//.bind('easytabs:midTransition', function(e, clicked, panel, settings) {
+		.bind('easytabs:ajax:beforeSend', function(e, clicked, panel){
+	       $(panel).closest('div').html('<img src="'+$('base').attr('href')+'images/loading/bars.gif"/>');
+	    })
+		.bind('easytabs:ajax:complete', function(e, clicked, panel, response, status, xhr) {
+	        var data = $.parseJSON(response);
+	        
+	        // callback function has been specified
+			if(data.callback !== undefined){setTimeout(function(){eval(data.callback);},data.callback_timeout ? data.callback_timeout : 300);}
+				
+	        
+	        // option to reload popup
+			if(data.reload_popup){					
+				reload_popup(data.reload_popup);
+			}
+			
+			// load url on targeted element
+			if(data.load_url){
+				
+				// check if target or container has been set	
+				if(data.load_target){
+					// send request
+					$.get(data.load_url, function(loaded_data) {
+						
+						// target
+						if(data.load_target){
+							// overwrite target
+							$("#"+data.load_target).html(loaded_data.content ? loaded_data.content : loaded_data);
+						}
+						global_loader();
+					})
+					// request error
+					.error(function(xhr, ajaxOptions, thrownError) {
+						// target
+						xhr.responseText ? alert(xhr.responseText) : alert(thrownError);
+					});
+				}
+				else{
+					// redirect to the url
+					if(data.load_timeout){
+						setTimeout(function(){location.href = data.load_url;}, data.load_timeout);
+					}
+					else{
+						location.href = data.load_url;
+					}
+				}	
+			}
+	        
+	        if(data.status == 'error'){
+	        	$(panel).closest('div').html('<div class="red">'+data.content+'</div>');
+	        }
+	        else{
+	        	$(panel).closest('div').html(data.content);
+	        	
+	        }
+	        
+	        global_loader();
+	    });
+	}
+}
+
+// apply some cosmetics to slect boxs, checkboxes input boxes
+var apply_some_cosmetics = function(){
+	// nice selects
+	//$("select").chosen(allow_single_deselect: true);
+	// remove chosen from filters
+	
+			
+}
+
+// forward the form submit to use ajax/jason submit
+var watch_form_submit = function ( ){	
+	$( "form[kfwajaxpost]" ).on("submit",function( event ){
+		KCommon.submitForm( $(this).attr('id'), $(this).attr('kfwajaxpost') );
+		return false;
+	});
+	
+	
+	// form filter
+	$( "form[kfwformfilter]" ).on("submit",function( event ){
+		event.preventDefault();
+		
+		var url 		= $(this).attr('action')
+		var url_part 	= url.split('?');
+		var form_id	 	= $(this).attr('id');
+		var final_url 	= url_part[0]
+		
+		$('#'+form_id+' input[id*=group-filter-],select[id*=group-filter-]').each(function(){  
+			// the minmax filter
+			if($(this).attr('minmax')){
+				var value 				= $(this).val();
+				var default_value 		= $(this).attr('default-title');
+				var filter_identifier	= $(this).attr('id').split('-');
+				var value_max 			= $('#group-extra-filter-'+filter_identifier[2]).val();
+				var default_value_max 	= $('#group-extra-filter-'+filter_identifier[2]).attr('default-title');
+				
+				// both min and max are defined
+				if(value && value != '' && value != default_value && value_max && value_max != '' && value_max != default_value_max ){
+					final_url = final_url +  $(this).attr('name') + '/' + value + '@' + value_max + '/';
+				}
+				// only min defined
+				else if(value && value != '' && value != default_value){
+					final_url = final_url +  $(this).attr('name') + '/' + value + '@/';
+				}
+				// only max defined
+				else if(value_max && value_max != '' && value_max != default_value_max){
+					final_url = final_url +  $(this).attr('name') + '/@' + value_max + '/';
+				}
+				
+			}
+			else{
+				// check if value has been selected
+				var value 			= $(this).val();
+				var default_value 	= $(this).attr('default-title');
+				
+				if(value && value != '' && value != default_value){
+					final_url = final_url +  $(this).attr('name') + '/' + value + '/';
+				}
+			}				
+		});
+		
+		// had query string
+		if(url_part.length >= 2){
+			final_url = final_url + '?' + url_part[1]
+		}
+		location.href = final_url
+	});
+	
+	// manage replication field data
+	$('select[kfw-replicate]').on('change', function(event){replication_field_data(this)});
+	$('input[kfw-replicate][type="radio"]').on('click', function(event){replication_field_data(this)});
+	$('input[kfw-replicate][type="checkbox"]').on('click', function(event){replication_field_data(this)});
+	
+	$('select[kfw-apply-rf-flag]').on('change', function(event){apply_required_if_flag(this)});
+	$('input[kfw-apply-rf-flag][type="radio"]').on('click', function(event){apply_required_if_flag(this)});
+	$('input[kfw-apply-rf-flag][type="checkbox"]').on('click', function(event){apply_required_if_flag(this)});
+	
+	
+	
+	// filters that are fired every time one is selected and are grouped under jump-filters
+	// @warning, do not use this with form kfwformfilter
+	$('select[id^="jump-filter-"]').on('change', function(event){jumpUrl(this)});
+	$('input[id^="jump-filter-"][type="radio"]').on('click', function(event){jumpUrl(this)});
+	$('input[id^="jump-filter-"][type="checkbox"]').on('click', function(event){jumpUrl(this)});
+	$('input[id^="jump-filter-"][type="text"]').on('keyup', function(event){
+		var key = -1;
+		var shift;
+		if ((document.all) || (document.getElementById)) {
+			key = event.keyCode;
+			shift = event.shiftKey;
+		} 
+		else if (document.layers) {
+			key = event.which;
+			shift = event.modifiers & Event.SHIFT_MASK;
+		}
+		
+		if ((!shift) && ((key == 13) || (key == 10))) {
+			jumpUrl(this)
+		} 
+	});
+	
+	// character counter
+	
+	
+	// apply a character counter to fileds with attributes kfwchar-counter
+	$('[kfwchar-counter]').keyup(function(event){ 		
+		var character_property 	= $(this).attr('kfwchar-counter').split('|');
+		KCommon.charCounter($(this).attr('id'), character_property[0], character_property[1], true);
+	});
+}
+
+var jumpUrl = function (el){
+	var url 			= $(el).attr('rel')
+	var url_part 		= url.split('?');
+	var final_url 		= url_part[0]
+	var selected_value 	= $(el).val();
+	
+	// add value if selected
+	if(selected_value && selected_value != '' && selected_value != 0){
+		final_url = final_url +  $(el).attr('name') + '/' + selected_value + '/';
+	}
+			
+	// had query string
+	if(url_part.length >= 2){
+		final_url = final_url + '?' + url_part[1]
+	}
+	location.href = final_url
+}
+
+var getCaret = function (el) { 
+  if (el.selectionStart) { 
+    return el.selectionStart; 
+  }
+  else if (document.selection) { 
+    el.focus(); 
+
+    var r = document.selection.createRange(); 
+    if (r == null) { 
+      return 0; 
+    } 
+
+    var re = el.createTextRange(), 
+        rc = re.duplicate(); 
+    re.moveToBookmark(r.getBookmark()); 
+    rc.setEndPoint('EndToStart', re); 
+
+    return rc.text.length; 
+  }  
+  return 0; 
+}
+
+// This function deals with clearing and restoring the values of a input field
+$.fn.resetField = function () {
+	return this.focus(function(){
+		if (this.value == this.defaultValue) {
+			this.value = "";
+			this.style.color = "#555555";
+		}
+	}).blur(function() {
+		if ( !this.value.length ) {
+			this.value = this.defaultValue;
+			this.style.color = "#b3b3b3";
+		}
+	})
+};
+
+
+
+        //capture on load
+                var verifyData = function(){
+                // notification element
+                var showing_notifications = '#' + $('#uralookup_identifier').val() + '-event-notification';
+                // clear any error or notice
+                $(showing_notifications).html('');
+                $(showing_notifications).removeClass();
+                $(showing_notifications).addClass('kfw-err-notices busy');
+                $(showing_notifications).html($('#uralookup_busy_message').val());
+
+                var vTin = $('#ura_tin').val();
+
+                if(vTin.length == 14){
+
+
+                   verifyBRN(vTin);
+                   return;
+                 }
+
+                $.getJSON($('#lookup_path').val() + '' + $('#ura_tin').val(), function(response){
+
+                        if(response){
+
+                                let eCode = response.errorCode;
+
+                                if(eCode !== 'E000'){
+
+                                   $(showing_notifications).removeClass();
+                                   $(showing_notifications).html(response.errorDesc);
+                                   $(showing_notifications).addClass('kfw-err-notices exception ');
+                                   return;
+
+                                 }
+                                $('#details_tin').val(                  response.tin);
+                                $('#details_surname').val(              response.taxPayerName);
+                                $('#details_firstname').val(            response.taxPayerName);
+                                $('#contacts_email').val(               response.taxPayerEmail);
+                                $('#contacts_box_number').val(          response.postalAddress);
+                                $('#contacts_mobile').val(              response.mobileNumber);
+                                $('#address_trading_center').val(       response.village);
+                                $('#address_street_name').val(          response.village);
+                                $('#details_entity_legal_name').val(    response.taxPayerName);
+                                $('#details_business_name').val(   response.taxPayerName);
+                                   console.log(response);
+                                $(showing_notifications).removeClass();
+                                $(showing_notifications).html('');
+                                $(showing_notifications).addClass('kfw-err-notices success ');
+
+                            }
+                          else{
+                                $(showing_notifications).removeClass();
+                                $(showing_notifications).html('error');
+                                $(showing_notifications).addClass('kfw-err-notices exception ');
+                           }
+                        })
+                      .error(function(xhr, ajaxOptions, thrownError) {
+                        $(showing_notifications).removeClass();
+                        $(showing_notifications).html('error');
+                        $(showing_notifications).addClass('kfw-err-notices exception ');
+                    });
+                  }
+
+                //capture plate data on lod
+                var verifyNumberPlate = function(){
+                // notification element
+                var showing_notifications = '#' + $('#ura_np_lookup_identifier').val() + '-event-notification';
+
+                // clear any error or notice
+                $(showing_notifications).html('');
+                $(showing_notifications).removeClass();
+                $(showing_notifications).addClass('kfw-err-notices busy');
+                $(showing_notifications).html($('#ura_np_lookup_busy_message').val());
+
+                $.getJSON($('#ura_np_lookup_path').val() + '' + $('#ura_number_plate').val(), function(response){
+
+                        if(response){
+
+                               let dateStr = response.dateOfRegistration;
+
+                                let dateArray = dateStr.split("/");
+
+                                let newDateStr = dateArray[2] + "-" + dateArray[1] + "-" + dateArray[0];
+
+                                $('#vehicle_log_book_date').val(newDateStr);
+                                $('#vehicle_number_plate').val(              response.mvregNo);
+                                $('#vehicle_color').val(            response.color);
+                                $('#vehicle_vehicle_year').val(               response.manufactureYear);
+                                $('#vehicle_vehicle_make').val(          response.make);
+                                $('#vehicle_vehicle_model').val(              response.modelName);
+                                $('#vehicle_engine_number').val(       response.engineNo);
+                                $('#vehicle_chassis_number').val(          response.chasisNo);
+                                $('#owner_owner_name').val(    response.taxPayerName);
+                                $('#owner_owner_tin').val(   response.tinNo);
+
+                                console.log(response);
+                                $(showing_notifications).removeClass();
+                                $(showing_notifications).html('');
+                                $(showing_notifications).remove();
+                        }
+
+
+                        else{
+                                $(showing_notifications).removeClass();
+                                $(showing_notifications).html('error');
+                                $(showing_notifications).addClass('kfw-err-notices exception ');
+                        }
+                })
+                .error(function(xhr, ajaxOptions, thrownError) {
+                        $(showing_notifications).removeClass();
+                        $(showing_notifications).html('error');
+                        $(showing_notifications).addClass('kfw-err-notices exception ');
+             });
+
+          }
+
+          var getBRN = function(){
+
+                           //getBRN
+
+                               if($('#tl_reg_business_reg_number').val()) {
+
+                                let brn = $('#tl_reg_business_reg_number').val();
+
+                                $.ajax(
+
+                                        {
+
+                                        type: 'GET',
+
+                                        dataType: 'xml',
+
+                                        url: '/ursbentity/' + brn,
+
+                                        success: function(data){
+
+                                         var xml = $(data);
+
+                                         //var xmlDoc = data.responseXML;
+                                         var entity_name = data.getElementsByTagName('entity_name')[0].childNodes[0].nodeValue;
+
+                                         var cert_number = data.getElementsByTagName('cert_number')[0].childNodes[0].nodeValue;
+
+                                         var company_type = data.getElementsByTagName('company_type')[0].childNodes[0].nodeValue;
+
+                                         $('#trading_license_main_business_name').val( entity_name );}});
+                                      } else {
+                                               alert('empty');
+                                             }}
+
+                                    var getNonBRN = function(){
+
+                                     if($('#details_certificate_number').val()) {
+
+                                         let brn = $('#details_certificate_number').val();
+
+                                      if(brn.length() == 10){
+
+                                               verifyTIN(brn);
+
+                                             return;
+
+                                             }
+
+                                           $.ajax(
+
+                                               {
+
+                                                type: 'GET',
+
+                                                dataType: 'xml',
+
+                                                url: '/ursbentity/' + brn,
+
+                                                success: function(data){
+
+                                               fillBRNDATA(data);
+
+
+                                         }});
+                                      } else {
+                                               alert('empty');
+                                             }}
+
+                 // switch brn and tin 
+                   var verifyBRN = function(brn){
+                   var showing_notifications = '#' + $('#uralookup_identifier').val() + '-event-notification';
+
+                   if(brn) {
+                     $.ajax(
+                        {
+                         type: 'GET',
+                         dataType: 'xml',
+                         url: '/ursbentity/' + brn,
+                         success: function(data){
+                         var xml = $(data);
+                         let eCode = (data.getElementsByTagName('error_code').length == 0 )? undefined : data.getElementsByTagName('error_code')[0].childNodes[0].nodeValue;
+
+                      if( eCode != undefined || typeof eCode != "undefined"){
+                         $(showing_notifications).removeClass();
+                         $(showing_notifications).html(eCode);
+                         $(showing_notifications).addClass('kfw-err-notices exception ');
+
+                          return;
+
+                      }
+
+                    //var xmlDoc = data.responseXML;
+                      let regStatus = data.getElementsByTagName('reg_status')[0].childNodes[0].nodeValue;
+                      fillBRNDATA(data);
+
+                      $(showing_notifications).removeClass();
+                      $(showing_notifications).html(regStatus);
+                      $(showing_notifications).addClass('kfw-err-notices success ');
+                      $(showing_notifications).remove();
+
+                    },
+                   error: function(xhr, status, error){
+                       var errorMessage = xhr.status + ': ' + xhr.statusText;
+                         $(showing_notifications).removeClass();
+                         $(showing_notifications).html(errorMessage);
+                      $(showing_notifications).addClass('kfw-err-notices exception ');
+                       alert(errorMessage);
+                  }
+                });
+
+               } else {
+                   alert('empty');
+                 }}
+                     var verifyTIN = function(tin){
+                           $.getJSON('/uraclient/' + '' + tin , function(response){
+                            if(response && response.tin){
+                                    $('#details_tin').val(response.tin);
+                                    $('#details_surname').val(response.taxPayerName);
+                                    $('#details_firstname').val(response.taxPayerName);
+                                    $('#contacts_email').val(response.taxPayerEmail);
+                                    $('#contacts_box_number').val(response.postalAddress);
+                                    $('#contacts_mobile').val(response.mobileNumber);
+                                    $('#address_trading_center').val(response.village);
+                                    $('#address_street_name').val(response.village);
+                                    $('#details_entity_legal_name').val(response.taxPayerName);
+                                    $('#details_business_name').val(response.taxPayerName);
+
+                                    console.log(response);
+
+                            }
+                            else{
+                                alert("No TIN Data Found");
+
+                            }
+                         })
+                    .error(function(xhr, ajaxOptions, thrownError) {
+                           var errorMessage = xhr.status + ': ' + xhr.statusText;
+                           alert(errorMessage);
+                 });
+
+             }
+
+              var fillBRNDATA  = function(data) {
+                  //var xmlDoc = data.responseXML;
+                  var entity_name = data.getElementsByTagName('entity_name')[0].childNodes[0].nodeValue;
+
+                  var cert_number = data.getElementsByTagName('cert_number')[0].childNodes[0].nodeValue;
+
+                  var company_type = data.getElementsByTagName('company_type')[0].childNodes[0].nodeValue;
+
+                  var established_on  = data.getElementsByTagName('established_on')[0].childNodes[0].nodeValue;
+
+                  $('#details_entity_legal_name').val( entity_name );
+
+                  $('#details_business_name').val( entity_name );
+
+                  $('#trading_license_main_business_name').val( entity_name );
+
+                 //$('#details_date_of_incorporation').val( entity_name );
+
+                 let dateStr = established_on;
+
+                 let dateArray = dateStr.split("T");
+
+                 let newDateStr =  dateArray[0];
+
+                 $('#details_date_of_incorporation').val( newDateStr );
+
+                 }
+
+       
+	
+	// captuvare on load
+	var marketData = function(){
+		
+		// notification element
+		var showing_notifications = '#' + $('#uralookup_identifier').val() + '-event-notification';
+		
+		// clear any error or notice
+		$(showing_notifications).html('');
+		$(showing_notifications).removeClass();	
+		$(showing_notifications).addClass('kfw-err-notices busy');
+		$(showing_notifications).html($('#uralookup_busy_message').val());
+		
+		
+		//$.getJSON($('#lookup_path').val() + '?vnp=' + $('#ura_number_plate').val(), '?mid=' + $('#vehicle_market_id').val(), function(response){
+		$.getJSON($('#lookup_path').val(), {vnp: $('#ura_number_plate').val(), mid: $('#vehicle_market_id1').val()}, function(response){	
+			
+			if(response.data){
+				console.log(response.data);
+				$("#vehicle_division").empty();
+				$("#vehicle_division").append("<option value='" + response.data.division_id + "'>" + response.data.division_name + "</option>");
+					
+				$("#owner_ownership_id").empty();
+				$("#owner_ownership_id").attr("disabled",false);
+				$("#owner_ownership_id").append("<option value='" + response.data.market_ownership_id + "'>" + response.data.market_ownership_name + "</option>");
+				$("#owner_ownership_id").attr("readonly",true);
+				
+				$("#owner_market_id").empty();
+				$("#owner_market_id").attr("disabled",false);
+				$("#owner_market_id").append("<option value='" + response.data.market_id + "'>" + response.data.market_name + "</option>");
+				$("#owner_market_id").attr("readonly",true);
+					
+				$("#owner_facility_id").empty();
+				$("#owner_facility_id").append("<option value='" + response.data.market_facility_id + "'>" + response.data.market_facility_name + "</option>");
+				$("#owner_facility_id").attr("readonly",true);
+				
+				$("#owner_market_facility_grade_id").empty();
+				$("#owner_market_facility_grade_id").append("<option value='" + response.data.grade_id + "'>" + response.data.grade_name + "</option>");
+				$("#owner_market_facility_grade_id").attr("readonly",true);
+				
+				$('#owner_facility_number').val(	response.data.facility_number);
+				$("#owner_facility_number").attr("readonly",true);
+				
+				$('#owner_mkt_amount').val(	response.data.rate);
+				$("#owner_mkt_amount").attr("readonly",true);
+											
+				$(showing_notifications).removeClass();	
+			 	$(showing_notifications).html('');
+				$(showing_notifications).remove();
+			}
+			else{
+				$(showing_notifications).removeClass();	
+		 		$(showing_notifications).html(response.error);
+		 		$(showing_notifications).addClass('kfw-err-notices exception ');
+			}
+		})
+		.error(function(xhr, ajaxOptions, thrownError) {
+			$(showing_notifications).removeClass();	
+	 		$(showing_notifications).html(data.error);
+	 		$(showing_notifications).addClass('kfw-err-notices exception ');
+	     });
+	}
+	
+
+/**
+ * Load google draggable GIS map - 2019 - Xzy 
+ * @param {*} config = {
+ * 	latElem:string - id name of the latitude input field
+ * 	lngElem: string  - id name of the longitude input field we shall use this elem to add the map below it
+ *  
+ * } 
+ * 
+ */
+var loadGISMap = function(config) {
+	var map; // will coontain the map object
+	var marker = false; // Has thee user plotted their location marker
+	
+	var markerLocation = (updateFields=true) => {
+		//Get location.
+		var currentLocation = marker.getPosition();
+		//Add lat and lng values to a field that we can save.
+		if (updateFields) {
+			document.getElementById(config.latElem).value = currentLocation.lat()
+			document.getElementById(config.lngElem).value = currentLocation.lng(); //latitude
+		}
+		
+		// document.getElementById('lng').value = currentLocation.lng(); //longitude
+	}
+
+	var geocodeAddress = (geocoder, resultsMap, strictBounds, address) => {
+		
+		var center = resultsMap.getCenter();
+		// var ne = mapbounds.getNorthEast();
+		// var sw = mapbounds.getSouthWest();
+		// console.log(mapbounds, ne.lat(),ne.lng(),sw.lat(), sw.lng());
+		// var ne = strictBounds.getNorthEast();
+		// var sw = strictBounds.getSouthWest();
+		//var nw = new google.maps.LatLng(ne.lat(), sw.lng());
+		//var se = new google.maps.LatLng(sw.lat(), ne.lng());
+		//console.log(strictBounds, ne.lat(),ne.lng(),sw.lat(),sw.lng());
+		//var bounds = new google.maps.LatLngBounds(sw, ne);
+        geocoder.geocode({'address': address}, function(results, status) {
+			//console.log(results[0].geometry.location.lat());
+		//get boundaries
+		
+          if (status === 'OK') {
+			var latlng = results[0].geometry.location;
+			//console.log(latlng.lat(),latlng.lng())
+			//if(strictBounds.contains(latlng)) {
+				resultsMap.setCenter();
+				if (marker == false) {
+					//we create a new marker if there is none
+					marker = new google.maps.Marker({
+						map: resultsMap,
+						position: results[0].geometry.location,
+						draggable: true
+					});
+				}else {
+					// marker.setCenter(resultsMap)
+					marker.setPosition(results[0].geometry.location)
+				}
+			//}else{
+			// 	alert('Location is not in allowed radius...');
+			// 	map.setCenter(center)
+
+			// 	return	
+			// }
+			
+          } else {
+			alert('Geocode was not successful for the following reason: ' + status);
+			return
+		  }
+		  
+		  markerLocation();
+		  console.log(resultsMap.getBounds())
+        });
+	}
+
+	var initMap = () => {
+		var lat = document.getElementById(config.latElem).value;
+		var lng = document.getElementById(config.lngElem).value;
+		var kampalaBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(0.3411588146453842,32.567572388954886),
+			new google.maps.LatLng(0.3540331809670187,32.59746561104521)
+		)
+		var nakawaBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(0.33202300855790734,32.61085438895486),
+			new google.maps.LatLng(0.3448973871698285,32.640747611045185)
+		)
+		var kawempeBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(0.3737345376838716,32.542106388954835),
+			new google.maps.LatLng(0.38660885751736107, 32.57199961104516)
+		)
+
+		var makindyeBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(0.2663978696399309, 32.60254438895481),
+			new google.maps.LatLng(0.2792723269161293,32.632437611045134)
+		)
+		
+		var rubagaBounds = new google.maps.LatLngBounds(
+			new google.maps.LatLng(0.30230128988566013,32.53297038895482),
+			new google.maps.LatLng(0.31517570621722957,32.562863611045145)
+		)
+
+		var strictBounds = {
+			'Kampala': kampalaBounds,
+			'Nakawa' : nakawaBounds,
+			'Kawempe' : kawempeBounds,
+			'Makindye' : makindyeBounds,
+			'Rubaga' : rubagaBounds
+		}
+		var division = $('#trading_license_other_division option:selected').text() || $('#frm_division option:selected').text();
+		console.log(division)
+		division = division.split(' ')[0];
+		if(division == "Central" || division == '-') {
+			division = "Kampala";
+		}
+		var strictBound = strictBounds[division];
+		console.log(strictBound, strictBound.getCenter())
+		if(!lat){
+			//default to Kampala
+			//lat = 0.347596
+			//lng = 32.582519
+			var center = strictBound.getCenter()
+			lat = center.lat()
+			lng = center.lng()
+			console.log(strictBound,lat,lng)	
+		}
+		$('#address').val(division);
+
+		//The center location of our map.
+		var centerOfMap = new google.maps.LatLng(lat, lng); //set our default location to Kampala
+		//Map options.
+		var options = {
+			center: centerOfMap, //Set center.
+			zoom: 15, //The zoom value.
+
+		//Make google map show OSM tiles
+		//   mapTypeId: "OSM",
+		//   mapTypeControlOptions: {
+		// 	  mapTypeIds: mapTypeIds
+		//   }
+		};
+		
+		//Create the map object.
+		map = new google.maps.Map(document.getElementById('map'), options);
+		var administrative_boundaries_kmz_src = "https://ecitie2.kcca.go.ug/kml/AdministrativeBoundaries.kmz";
+		
+		var administrativeLayer = new google.maps.KmlLayer(administrative_boundaries_kmz_src,{
+			preserveViewport: true,
+			suppressInfoWindow: false,
+			map: map
+		})
+
+		geocoder = new google.maps.Geocoder();
+
+		marker = new google.maps.Marker({
+			position: centerOfMap,
+			map: map,
+			draggable: false //make it draggable
+		});
+		markerLocation(false); //set the marker at first load
+		//create geocode object
+		
+		//Listen for any clicks on the map.
+		google.maps.event.addListener(map, 'click', function(event) {                
+			//Get the location that the user clicked.
+			return
+			var clickedLocation = event.latLng;
+			var c = map.getCenter();
+			var belongsToSearchRadius = strictBound.contains(clickedLocation)? true : false;
+			if(belongsToSearchRadius) {
+				//If the marker hasn't been added.
+				if(marker === false){
+					//Create the marker.
+					marker = new google.maps.Marker({
+						position: clickedLocation,
+						map: map,
+						draggable: true //make it draggable
+					});
+				} else{
+					//Marker has already been added, so just change its location.
+					marker.setPosition(clickedLocation);
+				}
+				//Get the marker's location.
+				markerLocation();
+			}else{
+				alert('Not in allowed radius..');
+				marker.setPosition(c);
+				markerLocation();
+			}
+		});
+		//Listen for drag events!
+		google.maps.event.addListener(marker, 'dragend', function(event){
+			var clickedLocation = event.latLng;
+			console.log(clickedLocation, strictBound)
+			var c = map.getCenter();
+			var belongsToSearchRadius = strictBound.contains(clickedLocation)? true : false;
+			
+			if(belongsToSearchRadius){
+				markerLocation();
+			}else{
+				alert('Not in allowed radius');
+				marker.setPosition(c);
+				markerLocation();
+			}
+			
+		});
+		document.getElementById('submit').addEventListener('click', function() {
+			var address = document.getElementById('address').value;
+			geocodeAddress(geocoder, map, strictBounds[division], address);
+		});
+	}
+	var mapDivContainer = $('<div id="map_container" hidden="true"></div>')
+	var searchBoxContainer = $('<div id="floating-panel"></div>')
+	var addrTxtBox = $('<input id="address" type="textbox" value="Kampala, Uganda"/>')
+	var srchBtn = $('<input id="submit" type="button" value="Search">');
+	var mapDiv = $('<div id="map" style="height:300px;width:95%;"></div>');
+	var locXelem = $('#'+config.latElem);
+	var locYelem = $('#'+config.lngElem);
+	searchBoxContainer.
+	append(addrTxtBox).
+	append(srchBtn).appendTo(mapDivContainer)
+
+	mapDivContainer.append(mapDiv).appendTo(locYelem.parent());
+	
+	//append map container after longitude input
+	var mcont = $('#map_container');
+	locXelem.on('click',function(){
+		mcont.attr('hidden',false);
+		initMap()
+	});
+
+}
+
+/**
+ * Load ARC GIS map - 2019 - Xzy 
+ * @param {*} config = {
+ * 	latElem:string - id name of the latitude input field
+ * 	lngElem: string  - id name of the longitude input field we shall use this elem to add the map below it
+ *  
+ * } 
+ * 
+ */
+var loadARCMap = function(config) {
+	var map; // will coontain the map object
+	
+	var initMap = () => {
+		var lat = document.getElementById(config.latElem).value;
+		var lng = document.getElementById(config.lngElem).value;
+		
+		require([
+			"dojo/dom", "dojo/_base/array", "dojo/promise/all", "dojo/json",
+	
+			"esri/map", "esri/domUtils", "esri/graphic", "esri/graphicsUtils",
+			"esri/geometry/Point", "esri/tasks/GeometryService", "esri/tasks/Geoprocessor",
+			"esri/tasks/FeatureSet", "esri/tasks/RelationParameters",
+			"esri/Color", "esri/symbols/SimpleLineSymbol",
+			"esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleFillSymbol",
+			"esri/request", "dojo/domReady!"
+		  ], function(
+			dom, array, all, JSON,
+	
+			Map, domUtils, Graphic, graphicsUtils,
+			Point, GeometryService, Geoprocessor,
+			FeatureSet, RelationParameters,
+			Color, SimpleLineSymbol,
+			SimpleMarkerSymbol, SimpleFillSymbol,
+			esriRequest
+		  ) {
+	
+			var geoprocessor, geometryService, geometries, baseGraphics;
+	
+			map = new esri.Map("map_container", {
+			  basemap: "topo",
+			  center: [-117.185, 34.052],
+			  zoom: 13
+			});
+			map.on("click", mapClicked);
+	
+			geometryService = new GeometryService("https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/Geometry/GeometryServer");
+			geoprocessor = new Geoprocessor("https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Network/ESRI_DriveTime_US/GPServer/CreateDriveTimePolygons");
+			geoprocessor.setOutSpatialReference({
+			  wkid: 102100
+			});
+	
+			function mapClicked(evt) {
+			  geometries = [];
+			  map.graphics.clear();
+	
+			  // add a simple marker graphic at the location where the user clicked on the map.
+			  var pointSymbol = new SimpleMarkerSymbol(
+				SimpleMarkerSymbol.STYLE_CROSS, 22,
+				new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 128, 0]), 4));
+	
+			  var clickPointGraphic = new Graphic(evt.mapPoint, pointSymbol);
+			  map.graphics.add(clickPointGraphic);
+	
+			  // use promise/all to monitor when place search and drive time calculation finish
+			  all({
+				poiSearch: executeLocalSearch(clickPointGraphic),
+				driveTimes: getDriveTimePolygon(clickPointGraphic)
+			  }).then(relateGeometries);
+			}
+	
+			function executeLocalSearch(graphic) {
+			  // find (up to) 20 pizza restaurants within a the map's current extent
+			  var params = {
+				text: "pizza",
+				location: JSON.stringify(graphic.geometry.toJson()),
+				bbox: JSON.stringify(map.extent.toJson()),
+				maxLocations: 20,
+				f: "json"
+			  };
+	
+			  return esriRequest({
+				url: "//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/find",
+				content: params,
+				callbackParamName: "callback"
+			  });
+			}
+	
+			function showLocations(response) {
+			  // create a symbol (Red Square) for pizza restaurants
+			  var pointSymbol = new SimpleMarkerSymbol(
+				SimpleMarkerSymbol.STYLE_SQUARE, 6,
+				new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 0]), 1),
+				new Color([255, 0, 0]));
+	
+			  // add the pizza restaurants to the map
+			  var results = response.locations;
+			  baseGraphics = array.map(results, function(r) {
+				var graphic = new Graphic(r.feature);
+				graphic.setSymbol(pointSymbol);
+				return map.graphics.add(graphic);
+			  });
+			}
+	
+			function getDriveTimePolygon(graphic) {
+			  // the graphic representing the selected location is passed onto the GP Task
+			  var featureSet = new FeatureSet();
+			  featureSet.features = [graphic];
+	
+			  var params = {
+				"Input_Location": featureSet,
+				"Drive_Times": 3
+			  };
+			  return geoprocessor.execute(params);
+			}
+	
+			function showDriveTime(results, messages) {
+			  var feature = results[0].value.features[0];
+	
+			  // add the drive time polygon to the map
+			  var polySymbolRed = new SimpleFillSymbol(
+				SimpleLineSymbol.STYLE_SOLID,
+				new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+				  new Color([0, 0, 0, 1]), 1),
+				new Color([255, 0, 0, 0.2]));
+			  feature.setSymbol(polySymbolRed);
+			  map.graphics.add(feature);
+			}
+	
+			function relateGeometries(results) {
+			  // check that both requests completed successfully
+			  if ( !results.poiSearch || !results.driveTimes ) {
+				alert("Unable to compute point in polygon.");
+			  }
+			  showDriveTime(results.driveTimes);
+			  showLocations(results.poiSearch);
+			  console.log("baseGraphics", baseGraphics);
+			  var relationParams = new RelationParameters();
+			  relationParams.geometries1 = graphicsUtils.getGeometries(baseGraphics);
+			  relationParams.geometries2 = graphicsUtils.getGeometries(results.driveTimes[0].value.features);
+			  relationParams.relation = RelationParameters.SPATIAL_REL_WITHIN;
+	
+			  geometryService.relation(relationParams).then(addRelateResultsToMap);
+			  // alternatively, could use polygon.contains instead of using the geometry service
+			}
+	
+			function addRelateResultsToMap(relations) {
+			  console.log("add relate results", relations);
+			  // create a Green Square symbol
+			  var symbol = new SimpleMarkerSymbol(
+				SimpleMarkerSymbol.STYLE_SQUARE, 8,
+				new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+				  new Color([0, 0, 0]), 1),
+				new Color([0, 255, 0]));
+			  // highlight the pizza places that satisfy the spatial relation (WITHIN) against the 3-minute drive time polygon
+			  array.forEach(relations, function(relation) {
+				baseGraphics[relation.geometry1Index].setSymbol(symbol).getDojoShape().moveToFront();
+			  });
+			}
+		  })
+	}
+	var mapDivContainer = $('<div id="map_container" hidden="true"></div>')
+	var searchBoxContainer = $('<div id="floating-panel"></div>')
+	var addrTxtBox = $('<input id="address" type="textbox" value="Kampala, Uganda"/>')
+	var srchBtn = $('<input id="submit" type="button" value="Search">');
+	var mapDiv = $('<div id="map" style="height:300px;width:95%;"></div>');
+	var locXelem = $('#'+config.latElem);
+	var locYelem = $('#'+config.lngElem);
+	searchBoxContainer.
+	append(addrTxtBox).
+	append(srchBtn).appendTo(mapDivContainer)
+
+	mapDivContainer.append(mapDiv).appendTo(locYelem.parent());
+	
+	//append map container after longitude input
+	var mcont = $('#map_container');
+	locXelem.on('click',function(){
+		mcont.attr('hidden',false);
+		initMap()
+	});
+
+}
+
+function initialize(lat,lng) {
+    // latLng = latLng.split(",") //split
+    var mapOptions = {
+        center: new google.maps.LatLng(lat,lat), //assign Seprately
+        zoom: 8
+	};
+    var map = new google.maps.Map(document.getElementById("map_container"), mapOptions);
+}
+
+/**
+* Load google GIS static map - 2019 - Xzy 
+* @param lat latitude
+* @param lng longitude
+* 
+*/
+var loadMap = (lat,lng,elem) => {
+		console.log('loading...')
+		var centerOfMap = new google.maps.LatLng(lat, lng); //set our default location to Kampala
+		//Map options.
+		var options = {
+		center: centerOfMap, //Set center.
+		zoom: 15, //The zoom value.
+		};
+		
+		//Create the map object.
+		map = new google.maps.Map(document.getElementById('map_container'), options);
+		
+		marker = new google.maps.Marker({
+			position: centerOfMap,
+			map: map,
+			draggable: false
+		});
+}
+
+
+//arcgis map
+
+
+// capture on load
+$(document).ready(function(){
+	hide_all_empty_containers();
+	global_loader();	
+	smart_tabs();
+});
